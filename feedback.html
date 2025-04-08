@@ -40,7 +40,6 @@
         });
       });
     </script>
-    
 </head>
 <body>
 
@@ -58,24 +57,35 @@
       <a href="leadership.html">Leadership</a>
       <a href="feedback.html">Feedback</a>
   </nav>
+
   <section>
     <h1 class="text-center">Feedback Form</h1>
     <h4 class="text-center">Send me your feedback about my website on improvements and bugs</h4>
+    
     <form id="signInForm" action="https://formsubmit.co/ekanshmishrainc@gmail.com" method="POST">
+        <!-- Hidden subject field -->
+        <input type="hidden" name="_subject" value="New feedback from Ekansh's Portfolio">
+
+        <!-- Email field with proper name attribute -->
         <div class="mb-3">
-        <label for="email">Enter your email:</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="johndoe@example.com" required>
-            <div id="emailHelp"><p>Well will never share your email with anyone else.</p></div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputUsername1"> Full Name</label>
-            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="John Doe" required>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Feedback</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+            <label for="email">Enter your email:</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="_replyto" placeholder="johndoe@example.com" required>
+            <div id="emailHelp"><p>We will never share your email with anyone else.</p></div>
         </div>
 
+        <!-- Full Name field with proper name attribute -->
+        <div class="mb-3">
+            <label for="exampleInputUsername1">Full Name</label>
+            <input type="text" class="form-control" id="exampleInputUsername1" name="name" placeholder="John Doe" required>
+        </div>
+
+        <!-- Feedback field with proper name attribute -->
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Feedback</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3" required></textarea>
+        </div>
+
+        <!-- Submit Button -->
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </section>
@@ -83,7 +93,7 @@
   <footer>
     <p>Developed by Ekansh Mishra</p>
     <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
-</footer>
+  </footer>
 
 </body>
 </html>
