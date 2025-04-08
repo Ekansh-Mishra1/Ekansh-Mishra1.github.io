@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekansh's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          document.body.classList.add("fade-in");
+      
+          const links = document.querySelectorAll("a[href]");
+          links.forEach(link => {
+            link.addEventListener("click", function (e) {
+              const target = link.getAttribute("href");
+              if (target && !target.startsWith("#") && !link.target) {
+                e.preventDefault();
+                document.body.classList.remove("fade-in");
+                document.body.style.opacity = 0;
+                setTimeout(() => {
+                  window.location.href = target;
+                }, 300); // Adjust to match transition
+              }
+            });
+          });
+        });
+    </script>
+</head>
+<body class="loaded">
+
+    <header>
+        <h1>Ekansh's Portfolio</h1>
+        <p>Welcome to my professional portfolio</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">"Work" Experience</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
+   
+    <section>
+        <h2>Welcome</h2>
+        <p>Hello, I'm Ekansh! I am passionate about technology, coding, maths and science. Currently, I am pursuing my studies at the School of Science and Technology (SST). </p>
+        <img src="Photo_of_Ekansh_Mishra.jpg" alt="Photo of Ekansh Mishra" height="225" width="150"> <!-- Add your image here -->
+    </section>
+
+    <footer>
+      <p>Developed by Ekansh Mishra</p>
+      <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+  </footer>
+
+    <script src="transition.js"></script>
+</body>
+</html>

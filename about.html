@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Ekansh's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+          opacity: 0;
+          transition: opacity 0.5s ease-in-out;
+        }
+        body.fade-in {
+          opacity: 1;
+        }
+      </style>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          document.body.classList.add("fade-in");
+      
+          const links = document.querySelectorAll("a[href]");
+          links.forEach(link => {
+            link.addEventListener("click", function (e) {
+              const target = link.getAttribute("href");
+              if (target && !target.startsWith("#") && !link.target) {
+                e.preventDefault();
+                document.body.classList.remove("fade-in");
+                document.body.style.opacity = 0;
+                setTimeout(() => {
+                  window.location.href = target;
+                }, 300); // Adjust to match transition
+              }
+            });
+          });
+        });
+      </script>
+      
+</head>
+<body class="loaded">
+
+    <header>
+        <h1>About Me</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">"Work" Experience</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
+   
+    <section id="about">
+        <img src="Photo_of_Ekansh_Mishra.jpg" alt="Photo of Ekansh Mishra" height="225" width="150"> <!-- Add your image here -->
+        <div>
+            <h2>About Ekansh Mishra</h2>
+            <p>Hello, I'm Ekansh! I am passionate about technology, coding, maths and science. Currently, I am pursuing my studies at the School of Science and Technology (SST). My skills include coding in Python, HTML, CSS, JavaScript, as well as expertise in robotics and graphic design, Public Speaking and Debate. I love to create innovative solutions, build web applications. I alo enjoy teaching children coding</p>
+            <h3>My Interest in ICT and Coding</h3>
+            <p>I have always had a deep interest in Information and Communication Technology (ICT) from a young age. The endless possibilities that technology offers to solve real-world problems fascinate me. Over the years, I have honed my coding skills in various programming languages such as Python, JavaScript, and HTML. I love experimenting with new ideas, building creative projects, and learning about new technologies.</p>
+            <p>Through my experience with robotics, web development and Python, I have gained hands-on experience in Coding and creating solutions. I am always eager to expand my knowledge and skills, whether it's by exploring new coding languages, understanding the latest tech trends, or engaging in collaborative projects that push the boundaries of technology.</p>
+            <br>
+            <p>I was honored to be recognized as a <strong>Code Young Star</strong> in CodeYoung. You can check out my recognition video here:</p>
+            <iframe width="100%" height="500" src="https://www.youtube.com/embed/nwLRUG4_FfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <br>
+            <br>
+            <h3>Languages I know(including coding)</h3>
+            <ul>
+                <li>English (spoken and writen)</li>
+                <li>Chinese (spoken and writen/Proficiency: medium)</li>
+                <li>Odia (spoken)</li>
+                <li>Scratch</li>
+                <li>Microbit Block Based</li>
+                <li>Lego EV3 Block Based</li>
+                <li>Lego Spike Block Based</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JS</li>
+                <li>Python</li>
+                <li>Swift (learning)</li>
+            </ul>
+          
+        </div>
+    </section>
+    
+    <footer>
+      <p>Developed by Ekansh Mishra</p>
+      <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+  </footer>
+
+    <script src="transition.js"></script>
+</body>
+</html>

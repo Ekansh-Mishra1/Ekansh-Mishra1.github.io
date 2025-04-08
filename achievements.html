@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - Ekansh's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      body.fade-in {
+        opacity: 1;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("fade-in");
+    
+        const links = document.querySelectorAll("a[href]");
+        links.forEach(link => {
+          link.addEventListener("click", function (e) {
+            const target = link.getAttribute("href");
+            if (target && !target.startsWith("#") && !link.target) {
+              e.preventDefault();
+              document.body.classList.remove("fade-in");
+              document.body.style.opacity = 0;
+              setTimeout(() => {
+                window.location.href = target;
+              }, 300); // Adjust to match transition
+            }
+          });
+        });
+      });
+    </script>
+    
+</head>
+<body class="loaded">
+
+    <header>
+        <h1>Achievements</h1>
+    </header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="education.html">Education</a>
+      <a href="work.html">"Work" Experience</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="feedback.html">Feedback</a>
+  </nav>
+ 
+    <section>
+        <h2>Achievements</h2>
+        <ul>
+            <li><b>Sasmo:</b> 2021 (Honorable Mention), 2022 (Bronze), 2023 (Silver), 2024 (Bronze), 2025 (Results coming later this year)</li>
+            <li><b>SMKC:</b> 2021 (Participation), 2022 (Honorable Mention), 2023 (Participation), 2024 (Bronze)</li>
+            <li><b>APMOPS:</b> 2023 (Participation), 2024 (Participation)</li>
+            <li><b>Story Telling</b> in Beacon Primary School: Second in class (2022), First in class (2021, 2023), Second in level (2021, 2023)</li>
+            <li><b>Excellence in ICT Scholarship (EICTS)</b> for years (2022, 2023, and 2024)</li>
+            <li><b>Science Fair</b> in Beacon Primary School 2021 Achievements: Closed Category: Top 5 (3rd), Open Category: Participation</li>
+            <li><b> Beacon Acheivement Ceremony (BAC)</b>: EICTS (mentioned above), Best in Class (2022), Best in Physical and Health Education (2023)</li>
+            <li><b>IDE Robotics competition</b> (2024): Represented Beacon Primary School</li>
+            <li><b>Best Design for the Adopt-A-Float Programme</b> by GoBGC for the School of Science and Technology's adopted float</li>
+        </ul>
+    </section>
+
+    <footer>
+      <p>Developed by Ekansh Mishra</p>
+      <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+  </footer>
+
+    <script src="transition.js"></script>
+</body>
+</html>
