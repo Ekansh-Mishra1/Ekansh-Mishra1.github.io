@@ -17,26 +17,6 @@
             opacity: 1;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            document.body.classList.add("fade-in");
-
-            const links = document.querySelectorAll("a[href]");
-            links.forEach(link => {
-                link.addEventListener("click", function (e) {
-                    const target = link.getAttribute("href");
-                    if (target && !target.startsWith("#") && !link.target) {
-                        e.preventDefault();
-                        document.body.classList.remove("fade-in");
-                        document.body.style.opacity = 0;
-                        setTimeout(() => {
-                            window.location.href = target;
-                        }, 300); // Adjust to match transition
-                    }
-                });
-            });
-        });
-    </script>
 </head>
 <body>
 
@@ -59,7 +39,7 @@
     <h1 class="text-center">Feedback Form</h1>
     <h4 class="text-center">Send me your feedback about my website on improvements and bugs</h4>
 
-    <form id="signInForm" action="https://formsubmit.co/ekanshmishrainc@gmail.com" method="POST">
+    <form action="https://formsubmit.co/ekanshmishrainc@gmail.com" method="POST">
         <!-- Hidden subject field -->
         <input type="hidden" name="_subject" value="New feedback from Ekansh's Portfolio">
 
