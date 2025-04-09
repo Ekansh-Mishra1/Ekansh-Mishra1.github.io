@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education - Ekansh's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-      body {
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-      }
-      body.fade-in {
-        opacity: 1;
-      }
-    </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.body.classList.add("fade-in");
-    
-        const links = document.querySelectorAll("a[href]");
-        links.forEach(link => {
-          link.addEventListener("click", function (e) {
-            const target = link.getAttribute("href");
-            if (target && !target.startsWith("#") && !link.target) {
-              e.preventDefault();
-              document.body.classList.remove("fade-in");
-              document.body.style.opacity = 0;
-              setTimeout(() => {
-                window.location.href = target;
-              }, 300); // Adjust to match transition
-            }
-          });
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education - Ekansh's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    body.fade-in {
+      opacity: 1;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fade in effect
+      document.body.classList.add("fade-in");
+
+      // Fade out on link click
+      document.querySelectorAll("a[href]").forEach(link => {
+        link.addEventListener("click", function (e) {
+          const target = this.getAttribute("href");
+
+          // Skip anchor links and new tab links
+          if (target && !target.startsWith("#") && !this.hasAttribute("target")) {
+            e.preventDefault();
+
+            // Check if target file exists before navigating
+            fetch(target, { method: "HEAD" })
+              .then(response => {
+                if (response.ok) {
+                  document.body.classList.remove("fade-in");
+                  document.body.style.opacity = 0;
+                  setTimeout(() => {
+                    window.location.href = target;
+                  }, 500); // Match transition time
+                } else {
+                  alert(`The file "${target}" was not found.`);
+                }
+              })
+              .catch(err => {
+                alert(`Error accessing "${target}": ${err}`);
+              });
+          }
         });
       });
-    </script>
-    
+    });
+  </script>
 </head>
+
 <body class="loaded">
 
   <header>
