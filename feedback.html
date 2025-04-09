@@ -1,50 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Education - Ekansh's Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-    body.fade-in {
-      opacity: 1;
-    }
-  </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Fade in
-      document.body.classList.add("fade-in");
-
-      // Intercept links for fade-out
-      const links = document.querySelectorAll("a[href]");
-      links.forEach((link) => {
-        link.addEventListener("click", function (e) {
-          const target = this.getAttribute("href");
-
-          // Skip if it's an anchor or opens in a new tab
-          if (!target.startsWith("#") && !this.hasAttribute("target")) {
-            e.preventDefault();
-            document.body.classList.remove("fade-in");
-            document.body.style.opacity = 0;
-
-            // Wait for fade-out before navigating
-            setTimeout(() => {
-              window.location.href = target;
-            }, 500); // Match transition time
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Ekansh's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      body.fade-in {
+        opacity: 1;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("fade-in");
+    
+        const links = document.querySelectorAll("a[href]");
+        links.forEach(link => {
+          link.addEventListener("click", function (e) {
+            const target = link.getAttribute("href");
+            if (target && !target.startsWith("#") && !link.target) {
+              e.preventDefault();
+              document.body.classList.remove("fade-in");
+              document.body.style.opacity = 0;
+              setTimeout(() => {
+                window.location.href = target;
+              }, 300); // Adjust to match transition
+            }
+          });
         });
       });
-    });
-  </script>
+    </script>
+    
 </head>
-<body>
+<body class="loaded">
 
   <header>
-    <h1>Education</h1>
+    <h1>Feedback</h1>
   </header>
 
   <nav>
