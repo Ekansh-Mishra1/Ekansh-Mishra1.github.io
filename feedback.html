@@ -3,25 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Ekansh's Portfolio</title>
+    <title>Education - Ekansh's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body {
-          opacity: 0;
-          transition: opacity 0.5s ease-in-out;
-        }
-        body.fade-in {
-          opacity: 1;
-        }
-      </style>
-        body {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        body.fade-in {
-            opacity: 1;
-        }
+      body {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      body.fade-in {
+        opacity: 1;
+      }
     </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("fade-in");
+    
+        const links = document.querySelectorAll("a[href]");
+        links.forEach(link => {
+          link.addEventListener("click", function (e) {
+            const target = link.getAttribute("href");
+            if (target && !target.startsWith("#") && !link.target) {
+              e.preventDefault();
+              document.body.classList.remove("fade-in");
+              document.body.style.opacity = 0;
+              setTimeout(() => {
+                window.location.href = target;
+              }, 300); // Adjust to match transition
+            }
+          });
+        });
+      });
+    </script>
 </head>
 <body>
 
