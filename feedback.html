@@ -1,86 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("fade-in");
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education - Ekansh's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    body.fade-in {
+      opacity: 1;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fade in
+      document.body.classList.add("fade-in");
 
-    const links = document.querySelectorAll("a[href]");
-    links.forEach(link => {
-      link.addEventListener("click", function (e) {
-        const target = this.getAttribute("href"); // changed from 'link' to 'this'
-        if (target && !target.startsWith("#") && !this.target) {
-          e.preventDefault();
-          document.body.classList.remove("fade-in");
-          document.body.style.opacity = 0;
-          setTimeout(() => {
-            window.location.href = target;
-          }, 500); // match fade duration
-        }
-      });
-    });
-  });
-</script>
+      // Intercept links for fade-out
+      const links = document.querySelectorAll("a[href]");
+      links.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          const target = this.getAttribute("href");
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education - Ekansh's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-      body {
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-      }
-      body.fade-in {
-        opacity: 1;
-      }
-    </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.body.classList.add("fade-in");
-    
-        const links = document.querySelectorAll("a[href]");
-        links.forEach(link => {
-          link.addEventListener("click", function (e) {
-            const target = link.getAttribute("href");
-            if (target && !target.startsWith("#") && !link.target) {
-              e.preventDefault();
-              document.body.classList.remove("fade-in");
-              document.body.style.opacity = 0;
-              setTimeout(() => {
-                window.location.href = target;
-              }, 300); // Adjust to match transition
-            }
-          });
+          // Skip if it's an anchor or opens in a new tab
+          if (!target.startsWith("#") && !this.hasAttribute("target")) {
+            e.preventDefault();
+            document.body.classList.remove("fade-in");
+            document.body.style.opacity = 0;
+
+            // Wait for fade-out before navigating
+            setTimeout(() => {
+              window.location.href = target;
+            }, 500); // Match transition time
+          }
         });
       });
-    </script>
+    });
+  </script>
 </head>
-<body class="loaded">
+<body>
 
-<header>
-    <h1>Feedback</h1>
-</header>
+  <header>
+    <h1>Education</h1>
+  </header>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="education.html">Education</a>
-      <a href="work.html">"Work" Experience</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="feedback.html">Feedback</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="education.html">Education</a>
+    <a href="work.html">Work Experience</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="feedback.html">Feedback</a>
   </nav>
 
-<section>
-    <div style="width:100%;height:500px;" data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div><script src="https://server.fillout.com/embed/v1/"></script>
-</section>
+  <section>
+    <div style="width:100%;height:500px;" data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize>
+    </div>
+    <script src="https://server.fillout.com/embed/v1/"></script>
+  </section>
 
-<footer>
+  <footer>
     <p>Developed by Ekansh Mishra</p>
     <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
-</footer>
+  </footer>
 
 </body>
 </html>
