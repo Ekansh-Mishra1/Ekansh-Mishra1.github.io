@@ -1,155 +1,335 @@
 /* style.css */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-header {
-  background-color: #333;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-}
-nav {
-  display: flex;
-  justify-content: center;
-  background-color: #444;
-}
-nav a {
-  color: white; /* Ensures the text is white */
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-nav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-section {
-  padding: 20px;
-  margin: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-#sec {
-  padding: 1px;
-  margin: 1px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-}
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap'); /* Added 700 weight for headings */
 
 :root {
-  --primary-color: #1f2937;
-  --secondary-color: #4b5563;
-  --accent-color: #3b82f6;
-  --bg-color: #f9fafb;
-  --card-bg: #ffffff;
-  --text-color: #1f2937;
-  --shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  --radius: 12px;
+    --primary-color: #1f2937; /* Dark Grey/Blue */
+    --secondary-color: #4b5563; /* Medium Grey */
+    --accent-color: #3b82f6; /* A vibrant Blue for accents */
+    --bg-color: #f9fafb; /* Light background */
+    --card-bg: #ffffff; /* White card background */
+    --text-color: #1f2937; /* Dark text */
+    --light-text-color: #e5e7eb; /* Light text for dark backgrounds */
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    --radius: 12px; /* Rounded corners */
+    --transition-speed: 0.3s; /* Standard transition speed */
 }
 
+/* Universal box-sizing for consistent layout */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  padding-bottom: 60px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-bottom: 80px; /* Space for fixed footer */
+    opacity: 0; /* Initial state for fade-in */
+    transition: opacity var(--transition-speed) ease-in-out;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column;
 }
 
+body.fade-in {
+    opacity: 1;
+}
+
+body.fade-out { /* Added for consistent exit transition */
+    opacity: 0;
+}
+
+/* Main Layout Structure */
+main {
+    flex: 1; /* Allows main content to grow and push footer down */
+    max-width: 900px; /* Limit width for readability */
+    margin: 30px auto; /* Center main content with vertical margin */
+    padding: 0 20px; /* Horizontal padding for smaller screens */
+}
+
+/* Header */
 header {
-  background-color: var(--primary-color);
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: var(--shadow); /* Added subtle shadow */
 }
 
 header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+    font-size: 2.8rem; /* Slightly larger for impact */
+    margin-bottom: 10px;
+    font-weight: 700; /* Bolder font for headings */
 }
 
 header p {
-  font-size: 1.1rem;
-  opacity: 0.9;
+    font-size: 1.1rem;
+    opacity: 0.9;
 }
 
+/* Navigation */
 nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows links to wrap on smaller screens */
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow below nav */
 }
 
 nav a {
-  color: white; /* Ensures the text is white */
-  padding: 15px 20px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.3s, color 0.3s;
+    color: var(--light-text-color); /* Use light text color from variables */
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: 600; /* Medium bold */
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform 0.2s ease-out;
+    position: relative; /* For underline effect */
 }
 
-nav a:hover {
-  background-color: var(--accent-color);
-  color: #fff;
+nav a::after { /* Underline effect on hover/active */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px; /* Thicker underline */
+    bottom: 0;
+    left: 50%;
+    background-color: var(--accent-color);
+    transition: width var(--transition-speed) ease-in-out, left var(--transition-speed) ease-in-out;
 }
 
+nav a:hover::after,
+nav a.active::after { /* Active state for current page */
+    width: 100%;
+    left: 0;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: var(--primary-color); /* Darker background on hover/active */
+    color: white; /* Keep text white on hover/active */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Sections (Main Content Cards) */
 section {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 25px;
-  background-color: var(--card-bg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+    padding: 30px; /* Increased padding */
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 30px; /* Space between sections if you add more */
 }
 
-h2 {
-  margin-bottom: 20px;
-  color: var(--primary-color);
-  font-size: 1.8rem;
+.hero-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center; /* Center the main welcome heading */
 }
 
-ul {
-  list-style: none;
-  padding-left: 0;
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: center; /* Center introductory text */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-ul li {
-  padding: 10px 0;
-  border-bottom: 1px solid #e5e7eb;
+/* Image Container and Responsive Images */
+.image-container {
+    text-align: center;
+    margin: 30px 0;
 }
 
-ul li:last-child {
-  border-bottom: none;
+.responsive-image {
+    max-width: 100%; /* Ensures images scale down on small screens */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center image */
 }
 
+/* LinkedIn Call to Action */
+.linkedin-cta {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0; /* Subtle separator */
+}
+
+.linkedin-cta h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.profile-link {
+    display: inline-block; /* Allows margins and padding */
+    margin-bottom: 25px;
+}
+
+.profile-pic {
+    width: 180px; /* Fixed size for circular image */
+    height: 180px;
+    border-radius: 50%; /* Make it perfectly circular */
+    object-fit: cover; /* Ensures image covers the circle without distortion */
+    border: 5px solid var(--accent-color); /* Border using accent color */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+    transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.08); /* Slightly larger on hover */
+    border-color: var(--primary-color); /* Change border color on hover */
+}
+
+/* Buttons */
+.button {
+    display: inline-flex; /* Allows text and icon to be on one line */
+    align-items: center; /* Vertically align content */
+    background-color: var(--accent-color);
+    color: white;
+    padding: 14px 30px; /* More generous padding */
+    border: none;
+    border-radius: 30px; /* Pill-shaped button */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: background-color var(--transition-speed), transform 0.2s ease, box-shadow var(--transition-speed);
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); /* Shadow for button */
+}
+
+.button:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+}
+
+.button i {
+    margin-left: 12px; /* Space between text and icon */
+    font-size: 1.1em;
+}
+
+/* Footer */
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: var(--primary-color);
-  color: white;
-  text-align: center;
-  padding: 12px;
-  font-size: 0.9rem;
+    position: relative; /* Changed from fixed to relative */
+    bottom: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 20px; /* Increased padding */
+    font-size: 0.9rem;
+    margin-top: auto; /* Push footer to the bottom if content is short */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow above footer */
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav {
+        flex-direction: column; /* Stack nav links vertically */
+        align-items: center;
+    }
+
+    nav a {
+        width: 100%; /* Make links full width when stacked */
+        text-align: center;
+        padding: 12px 20px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .hero-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    .linkedin-cta h3 {
+        font-size: 1.4rem;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .button {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    main {
+        margin: 15px auto;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    .hero-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .intro-text {
+        font-size: 0.9rem;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 0.8rem;
+    }
 }
