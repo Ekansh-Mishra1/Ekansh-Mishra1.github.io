@@ -10,13 +10,15 @@
     --card-bg: #ffffff; /* White card background */
     --text-color: #1f2937; /* Dark text */
     --light-text-color: #e5e7eb; /* Light text for dark backgrounds */
-    --shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08); /* Medium shadow */
+    --shadow-lg: 0 6px 15px rgba(0, 0, 0, 0.15); /* Larger shadow for emphasis */
     --radius: 12px; /* Rounded corners */
     --transition-speed: 0.3s; /* Standard transition speed */
 }
 
-/* Universal box-sizing for consistent layout */
-* {
+/* Universal box-sizing for consistent layout across all elements */
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -27,41 +29,41 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    padding-bottom: 80px; /* Space for fixed footer */
-    opacity: 0; /* Initial state for fade-in */
-    transition: opacity var(--transition-speed) ease-in-out;
     min-height: 100vh; /* Ensure body takes full viewport height */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Allows main content to push footer down */
+    opacity: 0; /* Initial state for fade-in effect */
+    transition: opacity var(--transition-speed) ease-in-out;
 }
 
+/* Body fade-in/fade-out animations */
 body.fade-in {
     opacity: 1;
 }
 
-body.fade-out { /* Added for consistent exit transition */
+body.fade-out {
     opacity: 0;
 }
 
-/* Main Layout Structure */
+/* Main Content Area */
 main {
     flex: 1; /* Allows main content to grow and push footer down */
-    max-width: 900px; /* Limit width for readability */
+    max-width: 900px; /* Limit width for readability on larger screens */
     margin: 30px auto; /* Center main content with vertical margin */
     padding: 0 20px; /* Horizontal padding for smaller screens */
 }
 
-/* Header */
+/* Header Section */
 header {
     background-color: var(--primary-color);
     color: var(--light-text-color);
     text-align: center;
     padding: 40px 20px;
-    box-shadow: var(--shadow); /* Added subtle shadow */
+    box-shadow: var(--shadow-md); /* Applied medium shadow */
 }
 
 header h1 {
-    font-size: 2.8rem; /* Slightly larger for impact */
+    font-size: 2.8rem; /* Larger for impact */
     margin-bottom: 10px;
     font-weight: 700; /* Bolder font for headings */
 }
@@ -71,25 +73,27 @@ header p {
     opacity: 0.9;
 }
 
-/* Navigation */
+/* Navigation Bar */
 nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap; /* Allows links to wrap on smaller screens */
     background-color: var(--secondary-color);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow below nav */
+    box-shadow: var(--shadow-sm); /* Subtle shadow below nav */
 }
 
 nav a {
-    color: var(--light-text-color); /* Use light text color from variables */
+    color: var(--light-text-color);
     padding: 15px 20px;
     text-decoration: none;
-    font-weight: 600; /* Medium bold */
-    transition: background-color var(--transition-speed), color var(--transition-speed), transform 0.2s ease-out;
+    font-weight: 600;
+    transition: background-color var(--transition-speed), transform 0.2s ease-out;
     position: relative; /* For underline effect */
+    outline-offset: 4px; /* Space for focus outline */
 }
 
-nav a::after { /* Underline effect on hover/active */
+/* Underline effect on hover/active */
+nav a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -118,8 +122,8 @@ section {
     padding: 30px; /* Increased padding */
     background-color: var(--card-bg);
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 30px; /* Space between sections if you add more */
+    box-shadow: var(--shadow-md); /* Applied medium shadow */
+    margin-bottom: 30px; /* Space between sections */
 }
 
 .hero-section h2 {
@@ -150,7 +154,7 @@ section {
     max-width: 100%; /* Ensures images scale down on small screens */
     height: auto; /* Maintains aspect ratio */
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md); /* Applied medium shadow */
     display: block; /* Remove extra space below image */
     margin: 0 auto; /* Center image */
 }
@@ -173,6 +177,7 @@ section {
 .profile-link {
     display: inline-block; /* Allows margins and padding */
     margin-bottom: 25px;
+    outline-offset: 4px; /* Space for focus outline */
 }
 
 .profile-pic {
@@ -181,7 +186,7 @@ section {
     border-radius: 50%; /* Make it perfectly circular */
     object-fit: cover; /* Ensures image covers the circle without distortion */
     border: 5px solid var(--accent-color); /* Border using accent color */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+    box-shadow: var(--shadow-lg); /* More prominent shadow */
     transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
@@ -194,6 +199,7 @@ section {
 .button {
     display: inline-flex; /* Allows text and icon to be on one line */
     align-items: center; /* Vertically align content */
+    justify-content: center; /* Center content horizontally */
     background-color: var(--accent-color);
     color: white;
     padding: 14px 30px; /* More generous padding */
@@ -204,6 +210,7 @@ section {
     font-size: 1.05rem;
     transition: background-color var(--transition-speed), transform 0.2s ease, box-shadow var(--transition-speed);
     box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); /* Shadow for button */
+    outline-offset: 4px; /* Space for focus outline */
 }
 
 .button:hover {
@@ -219,15 +226,13 @@ section {
 
 /* Footer */
 footer {
-    position: relative; /* Changed from fixed to relative */
-    bottom: 0;
-    width: 100%;
+    width: 100%; /* Ensure footer spans full width */
     background-color: var(--primary-color);
     color: var(--light-text-color);
     text-align: center;
     padding: 20px; /* Increased padding */
     font-size: 0.9rem;
-    margin-top: auto; /* Push footer to the bottom if content is short */
+    margin-top: auto; /* Pushes footer to the bottom of the flex container (body) */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow above footer */
 }
 
@@ -333,3 +338,4 @@ footer p {
         font-size: 0.8rem;
     }
 }
+
