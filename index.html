@@ -1,67 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-9">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekansh's Portfolio</title>
+    <title>Ekansh's Professional Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          document.body.classList.add("fade-in");
-      
-          const links = document.querySelectorAll("a[href]");
-          links.forEach(link => {
-            link.addEventListener("click", function (e) {
-              const target = link.getAttribute("href");
-              if (target && !target.startsWith("#") && !link.target) {
-                e.preventDefault();
-                document.body.classList.remove("fade-in");
-                document.body.style.opacity = 0;
-                setTimeout(() => {
-                  window.location.href = target;
-                }, 300); // Adjust to match transition
-              }
-            });
-          });
-        });
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="loaded">
 
     <header>
         <h1>Ekansh's Portfolio</h1>
-        <h4>Welcome to my professional portfolio</h4>
+        <p>Welcome to my professional portfolio</p>
     </header>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="education.html">Education</a>
-      <a href="work.html">"Work" Experience</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="hireme.html">Hire Me</a>
-      <a href="feedback.html">Feedback</a>
-  </nav>
-   
-    <section>
-        <h2>Welcome</h2>
-        <p>Hello, I'm Ekansh! I am passionate about technology, coding, maths and science. Currently, I am pursuing my studies at the School of Science and Technology, Singapore (SST). </p>
-        <br><br>
-        <img src="AppleTeacher_black.png" height="300" width="800">
-        <h3>LinkedIn Profile↓</h3>
-        <a href="https://www.linkedin.com/in/ekansh-mishra1" target="_blank"><img src="Profile pic.001.png" alt="Photo of Ekansh Mishra" height="350" width="350"></a>
-        <br><br>
-        <a href="https://www.linkedin.com/in/ekansh-mishra1" target=”_blank”>Ekansh Mishra's LinkedIn Profile</a>
-    </section>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">Experience</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="hireme.html">Hire Me</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
+    
+    <main> <section class="hero-section">
+            <h2>Welcome</h2>
+            <p class="intro-text">Hello, I'm Ekansh! I am passionate about **technology**, **coding**, **mathematics**, and **science**. Currently, I am pursuing my studies at the **School of Science and Technology, Singapore (SST)**.</p>
+            
+            <div class="image-container">
+                <img src="AppleTeacher_black.png" alt="Apple Teacher Logo" class="responsive-image">
+            </div>
+
+            <div class="linkedin-cta">
+                <h3>Connect with me on LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/ekansh-mishra1" target="_blank" rel="noopener noreferrer" class="profile-link">
+                    <img src="Profile pic.001.png" alt="Photo of Ekansh Mishra" class="profile-pic">
+                </a>
+                <p>
+                    <a href="https://www.linkedin.com/in/ekansh-mishra1" target="_blank" rel="noopener noreferrer" class="button button-linkedin">
+                        View Ekansh Mishra's LinkedIn Profile <i class="fab fa-linkedin"></i>
+                    </a>
+                </p>
+            </div>
+        </section>
+    </main>
 
     <footer>
-      <p>Developed by Ekansh Mishra</p>
-      <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
-  </footer>
+        <p>Developed by Ekansh Mishra</p>
+        <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+    </footer>
 
     <script src="transition.js"></script>
-</body>
+    <script src="app.js"></script> </body>
 </html>
  
