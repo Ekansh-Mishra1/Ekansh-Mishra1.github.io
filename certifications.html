@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-9">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certifications - Ekansh's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <style>
-      body {
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-      }
-      body.fade-in {
-        opacity: 1;
-      }
+        body {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        body.fade-in {
+            opacity: 1;
+        }
+        /* Optional: Basic styling for dropdowns if needed */
+        details {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 5px 0;
+        }
+        details[open] summary {
+            /* Style when dropdown is open */
+        }
+        details ul {
+            list-style: none; /* Remove default bullet points for inner lists */
+            padding-left: 20px;
+        }
+        details li {
+            margin-bottom: 5px;
+        }
     </style>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.body.classList.add("fade-in");
-    
-        const links = document.querySelectorAll("a[href]");
-        links.forEach(link => {
-          link.addEventListener("click", function (e) {
-            const target = link.getAttribute("href");
-            if (target && !target.startsWith("#") && !link.target) {
-              e.preventDefault();
-              document.body.classList.remove("fade-in");
-              document.body.style.opacity = 0;
-              setTimeout(() => {
-                window.location.href = target;
-              }, 300); // Adjust to match transition
-            }
-          });
-        });
-      });
-    </script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("fade-in");
 
+            const links = document.querySelectorAll("a[href]");
+            links.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    const target = link.getAttribute("href");
+                    if (target && !target.startsWith("#") && !link.target) {
+                        e.preventDefault();
+                        document.body.classList.remove("fade-in");
+                        document.body.style.opacity = 0;
+                        setTimeout(() => {
+                            window.location.href = target;
+                        }, 300); // Adjust to match transition
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body class="loaded">
 
@@ -43,33 +61,54 @@
     </header>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="education.html">Education</a>
-      <a href="work.html">"Work" Experience</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="hireme.html">Hire Me</a>
-      <a href="feedback.html">Feedback</a>
-  </nav>
- 
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">"Work" Experience</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="hireme.html">Hire Me</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
+
     <section>
         <h2>Certifications</h2>
         <ul>
             <li>Certified in <b>HTML, CSS and Java Script</b> (Code Young)</li>
             <li>Certified in <b>Python Programming</b> (Code Vidhya)</li>
             <li><b>Junior Lex!s Debate Masterclass</b> (ACJC)</li>
-            <li><b>Google Applied Digital Skills</b> (Google)</li>
-            <li><b>Apple Teacher </b> (Apple)</li>
+            <li>
+                <details>
+                    <summary>Google Applied Digital Skills (Google)</summary>
+                    <ul>
+                        <li></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>Apple Teacher (Apple)</summary>
+                    <ul>
+                        <li>iPad Skills</li>
+                        <li>Mac Skills</li>
+                        <li>Swift Playgrounds</li>
+                        <li>Pages</li>
+                        <li>Keynote</li>
+                        <li>Numbers</li>
+                        <li>GarageBand</li>
+                        <li>iMovie</li>
+                    </ul>
+                </details>
+            </li>
         </ul>
         <img src="AppleTeacher_black.png" height="300" width="800">
     </section>
 
     <footer>
-      <p>Developed by Ekansh Mishra</p>
-      <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
-  </footer>
+        <p>Developed by Ekansh Mishra</p>
+        <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+    </footer>
 
     <script src="transition.js"></script>
 </body>
