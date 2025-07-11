@@ -26,11 +26,19 @@
             /* Style when dropdown is open */
         }
         details ul {
-            list-style: none; /* Remove default bullet points for inner lists */
-            padding-left: 20px;
+            list-style: disc; /* Use standard disc for certificates */
+            padding-left: 30px; /* Adjust indentation */
         }
         details li {
             margin-bottom: 5px;
+        }
+        /* Style for links to certificates */
+        details li a {
+            color: #007bff; /* Example link color */
+            text-decoration: underline;
+        }
+        details li a:hover {
+            color: #0056b3;
         }
     </style>
     <script>
@@ -41,7 +49,8 @@
             links.forEach(link => {
                 link.addEventListener("click", function (e) {
                     const target = link.getAttribute("href");
-                    if (target && !target.startsWith("#") && !link.target) {
+                    // Ensure the fade-out effect only applies to internal links, not external PDFs
+                    if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
                         e.preventDefault();
                         document.body.classList.remove("fade-in");
                         document.body.style.opacity = 0;
@@ -82,14 +91,14 @@
                 <details>
                     <summary>Google Applied Digital Skills (Google)</summary>
                     <ul>
-                        <li><img src="1.pdf" height="350px" width="500px"></li>
-                        <li><img src="2.pdf"></li>
-                        <li><img src="3.pdf"></li>
-                        <li><img src="4.pdf"></li>
-                        <li><img src="5.pdf"></li>
-                        <li><img src="6.pdf"></li>
-                        <li><img src="7.pdf"></li>
-                        <li><img src="8.pdf"></li>
+                        <li><a href="1.pdf" target="_blank">Certificate: Create a Research Plan</a></li>
+                        <li><a href="2.pdf" target="_blank">Certificate: Understand and Avoid Plagiarism</a></li>
+                        <li><a href="3.pdf" target="_blank">Certificate: Explore and Navigate the Internet</a></li>
+                        <li><a href="4.pdf" target="_blank">Certificate: Incorporate Feedback</a></li>
+                        <li><a href="5.pdf" target="_blank">Certificate: Create a Public Service Announcement (PSA)</a></li>
+                        <li><a href="6.pdf" target="_blank">Certificate: Stay Safe Online</a></li>
+                        <li><a href="7.pdf" target="_blank">Certificate: Plan and Produce a Video</a></li>
+                        <li><a href="8.pdf" target="_blank">Certificate: Evaluate Information Online</a></li>
                     </ul>
                 </details>
             </li>
@@ -105,12 +114,12 @@
                         <li>Numbers</li>
                         <li>GarageBand</li>
                         <li>iMovie</li>
-                        <li><img src="ATC.pdf"></li>
+                        <li><a href="ATC.pdf" target="_blank">View Apple Teacher Certificate</a></li>
                     </ul>
                 </details>
             </li>
         </ul>
-        <img src="AppleTeacher_black.png" height="300" width="800">
+        <img src="AppleTeacher_black.png" height="300" width="800" alt="Apple Teacher Certification Logo">
     </section>
 
     <footer>
