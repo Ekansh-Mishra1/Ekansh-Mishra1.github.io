@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-9">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ekansh's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.add("fade-in");
-
             const links = document.querySelectorAll("a[href]");
             links.forEach(link => {
                 link.addEventListener("click", function (e) {
                     const target = link.getAttribute("href");
-                    // Apply fade-out only for internal, non-hash, non-external links
+                    // Apply fade-out only for internal, non-hash, non-external links, and not for PDF links
                     if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
                         e.preventDefault();
                         document.body.classList.remove("fade-in");
-                        document.body.style.opacity = 0;
+                        document.body.classList.add("fade-out"); // Add fade-out class
                         setTimeout(() => {
                             window.location.href = target;
                         }, 300); // Adjust to match transition
@@ -31,7 +30,7 @@
 
     <header>
         <h1>Ekansh's Portfolio</h1>
-        <h4>Welcome to my professional portfolio</h4>
+        <p>Welcome to my professional portfolio</p>
     </header>
 
     <nav>
@@ -46,18 +45,17 @@
         <a href="feedback.html">Feedback</a>
     </nav>
 
-    <section class="hero-section">
-        <img src="Photo_of_Ekansh_Mishra.jpg" alt="Ekansh Mishra Profile Picture" class="profile-pic">
-        <h2>Hi, I'm Ekansh Mishra</h2>
-        <p>A passionate and driven student exploring the intersection of technology, leadership, and problem-solving.</p>
-        <a href="about.html" class="button">Learn More About Me</a>
-    </section>
+    <main>
+        <section class="hero-section">
+            <a href="https://www.linkedin.com/in/ekansh-mishra1" target="_blank" class="profile-link">
+                <img src="Photo_of_Ekansh_Mishra.jpg" alt="Ekansh Mishra Profile Picture" class="profile-pic">
+            </a>
+            <h2>Hi, I'm Ekansh Mishra</h2>
+            <p class="intro-text">A passionate and driven student exploring the intersection of technology, leadership, and problem-solving.</p>
+            <a href="about.html" class="button">Learn More About Me <i class="fas fa-arrow-right"></i></a>
+        </section>
 
-    <section>
-        <h2>Welcome</h2>
-        <p>This portfolio showcases my achievements, education, work experience, and certifications. I am constantly learning and growing, and I'm excited to share my journey with you.</p>
-        <p>Feel free to navigate through the different sections to learn more about my skills and projects.</p>
-    </section>
+        </main>
 
     <footer>
         <p>Developed by Ekansh Mishra</p>
@@ -66,7 +64,7 @@
             <a href="https://linkedin.com/in/ekansh-mishra1" target="_blank" aria-label="LinkedIn Profile">
                 <img src="linkedin-logo.png" alt="LinkedIn Logo">
             </a>
-        </div>
+            </div>
     </footer>
 
     <script src="transition.js"></script>
