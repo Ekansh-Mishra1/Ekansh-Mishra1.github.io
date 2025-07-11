@@ -1,127 +1,69 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekansh's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("fade-in");
 
-    <meta charset="UTF-9">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Ekansh's Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <script>
-
-        document.addEventListener("DOMContentLoaded", () => {
-
-          document.body.classList.add("fade-in");
-
-      
-
-          const links = document.querySelectorAll("a[href]");
-
-          links.forEach(link => {
-
-            link.addEventListener("click", function (e) {
-
-              const target = link.getAttribute("href");
-
-              if (target && !target.startsWith("#") && !link.target) {
-
-                e.preventDefault();
-
-                document.body.classList.remove("fade-in");
-
-                document.body.style.opacity = 0;
-
-                setTimeout(() => {
-
-                  window.location.href = target;
-
-                }, 300); // Adjust to match transition
-
-              }
-
-            });
-
-          });
-
-        });
-
-    </script>
-
+            const links = document.querySelectorAll("a[href]");
+            links.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    const target = link.getAttribute("href");
+                    // Apply fade-out only for internal, non-hash, non-external links
+                    if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
+                        e.preventDefault();
+                        document.body.classList.remove("fade-in");
+                        document.body.style.opacity = 0;
+                        setTimeout(() => {
+                            window.location.href = target;
+                        }, 300); // Adjust to match transition
+                    }
+                });
+            });
+        });
+    </script>
 </head>
-
 <body class="loaded">
 
+    <header>
+        <h1>Ekansh's Portfolio</h1>
+        <h4>Welcome to my professional portfolio</h4>
+    </header>
 
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">"Work" Experience</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="hireme.html">Hire Me</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
 
-    <header>
+    <section class="hero-section">
+        <img src="Photo_of_Ekansh_Mishra.jpg" alt="Ekansh Mishra Profile Picture" class="profile-pic">
+        <h2>Hi, I'm Ekansh Mishra</h2>
+        <p>A passionate and driven student exploring the intersection of technology, leadership, and problem-solving.</p>
+        <a href="about.html" class="button">Learn More About Me</a>
+    </section>
 
-        <h1>Ekansh's Portfolio</h1>
+    <section>
+        <h2>Welcome</h2>
+        <p>This portfolio showcases my achievements, education, work experience, and certifications. I am constantly learning and growing, and I'm excited to share my journey with you.</p>
+        <p>Feel free to navigate through the different sections to learn more about my skills and projects.</p>
+    </section>
 
-        <h4>Welcome to my professional portfolio</h4>
+    <footer>
+        <p>Developed by Ekansh Mishra</p>
+        <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+    </footer>
 
-    </header>
-
-
-
-    <nav>
-
-      <a href="index.html">Home</a>
-
-      <a href="about.html">About Me</a>
-
-      <a href="achievements.html">Achievements</a>
-
-      <a href="certifications.html">Certifications</a>
-
-      <a href="education.html">Education</a>
-
-      <a href="work.html">"Work" Experience</a>
-
-      <a href="leadership.html">Leadership</a>
-
-      <a href="hireme.html">Hire Me</a>
-
-      <a href="feedback.html">Feedback</a>
-
-  </nav>
-
-   
-
-    <section>
-
-        <h2>Welcome</h2>
-
-        <p>Hello, I'm Ekansh! I am passionate about technology, coding, maths and science. Currently, I am pursuing my studies at the School of Science and Technology, Singapore (SST). </p>
-
-        <br><br>
-
-        <h3>LinkedIn Profile↓</h3>
-
-        <a href="https://www.linkedin.com/in/ekansh-mishra1" target="_blank"><img src="Profile pic.001.png" alt="Photo of Ekansh Mishra" height="350" width="350"></a>
-
-        <br><br>
-
-        <a href="https://www.linkedin.com/in/ekansh-mishra1" target=”_blank”>Ekansh Mishra's LinkedIn Profile</a>
-
-    </section>
-
-
-
-    <footer>
-
-      <p>Developed by Ekansh Mishra</p>
-
-      <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
-
-  </footer>
-
-
-
-    <script src="transition.js"></script>
-
+    <script src="transition.js"></script>
 </body>
-
 </html>
