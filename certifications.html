@@ -6,14 +6,8 @@
     <title>Certifications - Ekansh's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        body.fade-in {
-            opacity: 1;
-        }
-        /* Optional: Basic styling for dropdowns if needed */
+        /* Specific styling for dropdowns already included in main style.css for better organization */
+        /* Keeping this block here for demonstration of previous inline styles, but ideally move to style.css */
         details {
             margin-bottom: 10px;
         }
@@ -34,11 +28,11 @@
         }
         /* Style for links to certificates */
         details li a {
-            color: #007bff; /* Example link color */
+            color: var(--accent-color); /* Example link color from CSS variables */
             text-decoration: underline;
         }
         details li a:hover {
-            color: #0056b3;
+            color: var(--primary-color);
         }
     </style>
     <script>
@@ -49,7 +43,7 @@
             links.forEach(link => {
                 link.addEventListener("click", function (e) {
                     const target = link.getAttribute("href");
-                    // Ensure the fade-out effect only applies to internal links, not external PDFs
+                    // Apply fade-out only for internal, non-hash, non-external links, AND NOT for PDF links
                     if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
                         e.preventDefault();
                         document.body.classList.remove("fade-in");
@@ -106,22 +100,24 @@
                 <details>
                     <summary>Apple Teacher (Apple)</summary>
                     <ul>
+                        <li>iPad Skills</li>
                         <li>Mac Skills</li>
+                        <li>Swift Playgrounds</li>
                         <li>Pages</li>
                         <li>Keynote</li>
                         <li>Numbers</li>
                         <li>GarageBand</li>
                         <li>iMovie</li>
-                        <li>Swift Code<li>
-                        <li>Swift playgrounds app</li>
-                        <li>Coding in the classroom</li>
+                        <li>Swift Coding</li>
+                        <li>Swift Playgrounds App</li>
+                        <li>Coding in the Classroom</li>
                         <li><a href="ATC.pdf" target="_blank">View Apple Teacher Certificate</a></li>
-                        <li><img src="ATC2.pdf"></li>
+                        <li><a href="ATC2.pdf" target="_blank">View Apple Teacher Certificate (Page 2, if applicable)</a></li>
                     </ul>
                 </details>
             </li>
         </ul>
-        <img src="AppleTeacher_black.png" height="300" width="800" alt="Apple Teacher Certification Logo">
+        <img src="AppleTeacher_black.png" height="300" width="800" alt="Apple Teacher Certification Logo" class="cert-image">
     </section>
 
     <footer>
