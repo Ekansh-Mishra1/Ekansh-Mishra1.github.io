@@ -1,39 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-9">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Ekansh's Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-          opacity: 0;
-          transition: opacity 0.5s ease-in-out;
-        }
-        body.fade-in {
-          opacity: 1;
-        }
-      </style>
-      <script>
+    <script>
         document.addEventListener("DOMContentLoaded", () => {
-          document.body.classList.add("fade-in");
-      
-          const links = document.querySelectorAll("a[href]");
-          links.forEach(link => {
-            link.addEventListener("click", function (e) {
-              const target = link.getAttribute("href");
-              if (target && !target.startsWith("#") && !link.target) {
-                e.preventDefault();
-                document.body.classList.remove("fade-in");
-                document.body.style.opacity = 0;
-                setTimeout(() => {
-                  window.location.href = target;
-                }, 300); // Adjust to match transition
-              }
+            document.body.classList.add("fade-in");
+
+            const links = document.querySelectorAll("a[href]");
+            links.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    const target = link.getAttribute("href");
+                    if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
+                        e.preventDefault();
+                        document.body.classList.remove("fade-in");
+                        document.body.style.opacity = 0;
+                        setTimeout(() => {
+                            window.location.href = target;
+                        }, 300); // Adjust to match transition
+                    }
+                });
             });
-          });
         });
-      </script>
+    </script>
 </head>
 <body class="loaded">
 
@@ -42,54 +33,50 @@
     </header>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="education.html">Education</a>
-      <a href="work.html">"Work" Experience</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="hireme.html">Hire Me</a>
-      <a href="feedback.html">Feedback</a>
-  </nav>
-   
-    <section id="about">
-        <img src="Photo_of_Ekansh_Mishra.jpg" alt="Photo of Ekansh Mishra" height="225" width="150"> <!-- Add your image here -->
-        <div>
-            <h2>About Ekansh Mishra</h2>
-            <p>Hello, I'm Ekansh! I am passionate about technology, coding, maths and science. Currently, I am pursuing my studies at the School of Science and Technology (SST). My skills include coding in Python, HTML, CSS, JavaScript, as well as expertise in robotics and graphic design, Public Speaking and Debate. I love to create innovative solutions, build web applications.</p>
-            <h3>My Interest in ICT and Coding</h3>
-            <p>I have always had a deep interest in Information and Communication Technology (ICT) from a young age. The endless possibilities that technology offers to solve real-world problems fascinate me. Over the years, I have honed my coding skills in various programming languages such as Python, JavaScript, and HTML. I love experimenting with new ideas, building creative projects, and learning about new technologies.</p>
-            <p>Through my experience with robotics, web development and Python, I have gained hands-on experience in Coding and creating solutions. I am always eager to expand my knowledge and skills, whether it's by exploring new coding languages, understanding the latest tech trends, or engaging in collaborative projects that push the boundaries of technology.</p>
-            <br>
-            <p>I was honored to be recognized as a <strong>Code Young Star</strong>. You can check out my recognition video here:</p>
-            <iframe width="100%" height="500" src="https://www.youtube.com/embed/nwLRUG4_FfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <br>
-            <br>
-            <h3>Languages I know (Including coding)</h3>
-            <ul>
-                <li>English (spoken and written)</li>
-                <li>Chinese (spoken and written/Proficiency: medium)</li>
-                <li>Odia (spoken)</li>
-                <li>Scratch Block-Based</li>
-                <li>Microbit Block-Based</li>
-                <li>LEGO EV3 Block-Based</li>
-                <li>LEGO Spike Block-Based</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JS</li>
-                <li>Python</li>
-                <li>Swift (learning)</li>
-            </ul>
-            <h3>About.Me Website↓</h3>
-            <a href="https://about.me/ekansh-mishra" target="_blank">Ekansh Mishra's About.Me website</a>
-        </div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">"Work" Experience</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="hireme.html">Hire Me</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
+
+    <section>
+        <img src="Photo_of_Ekansh_Mishra.jpg" alt="Ekansh Mishra Profile Picture" class="profile-pic" style="margin-top: 0;"> <h2>About Me</h2>
+        <p>Hello! I am Ekansh Mishra, an enthusiastic and curious individual with a passion for technology, particularly in areas like web development and app design. I am always eager to learn new skills and apply them in practical, impactful ways.</p>
+        <p>I enjoy participating in various competitions and projects, always striving to improve and innovate. I believe in the power of collaboration and enjoy working with others to solve complex problems and create meaningful solutions. My journey in tech is driven by a desire to build and contribute, whether it's through coding, design, or leadership.</p>
+        <p>I am keen on exploring new frontiers in the digital world and participating in collaborative projects that push the boundaries of technology.</p>
+        <br>
+        <p>I was honored to be recognized as a <b>Code Young Star</b>. You can check out my recognition video here:</p>
+       <iframe width="100%" height="500" src="https://www.youtube.com/embed/nwLRUG4_FfY" title="Codeyoung Stars- Ekansh Mishra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <br>
+        <br>
+        <h3>Languages I know (Including coding)</h3>
+        <ul>
+            <li>English (spoken and written)</li>
+            <li>Chinese (spoken and written/Proficiency: medium)</li>
+            <li>Odia (spoken)</li>
+            <li>Scratch Block-Based</li>
+            <li>Microbit Block-Based</li>
+            <li>LEGO EV3 Block-Based</li>
+            <li>LEGO Spike Block-Based</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+            <li>Python</li>
+            <li>Swift (learning)</li>
+        </ul>
+        <h3>About.Me Website↓</h3>
+        <a href="https://about.me/ekansh-mishra" target="_blank">Ekansh Mishra's About.Me website</a>
     </section>
-    
+
     <footer>
-      <p>Developed by Ekansh Mishra</p>
-      <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
-  </footer>
+        <p>Developed by Ekansh Mishra</p>
+        <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+    </footer>
 
     <script src="transition.js"></script>
 </body>
