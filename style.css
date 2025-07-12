@@ -47,7 +47,7 @@ header {
     background-color: var(--primary-color);
     color: var(--light-text-color);
     padding: 20px;
-    height: 450px;
+    height: 350px;
     text-align: center;
     box-shadow: var(--shadow-md);
     position: relative; /* Essential for z-index and pseudo-elements */
