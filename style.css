@@ -46,14 +46,20 @@ body.loaded {
 }
 
 
-/* Header - UPDATED PADDING FOR LARGER SIZE ON ALL PAGES */
+/* Header - Height controlled by min-height, content centered with flexbox */
 header {
     background-color: var(--primary-color);
     color: var(--light-text-color);
-    padding: 80px 20px; /* Made header significantly taller */
-    text-align: center;
+    padding: 20px; /* Reduced padding, height now handled by min-height */
+    text-align: center; /* Still center text for non-flexbox content or fallbacks */
     box-shadow: var(--shadow-md);
     position: relative; /* For potential absolute positioning of elements */
+
+    min-height: 250px; /* Explicitly defining minimum height */
+    display: flex; /* Enable flexbox for vertical centering */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
 }
 
 header h1 {
@@ -75,7 +81,7 @@ header h4 {
     background-position: center; /* Centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-color: transparent; /* Override the solid background color */
-    /* padding: 60px 20px; -- REMOVED: Now inherits larger padding from general 'header' rule */
+    /* padding was already removed/commented, min-height and flex properties will be inherited */
 }
 
 /* Adjust text color if needed for readability over the image */
@@ -92,7 +98,7 @@ header h4 {
     background-position: center; /* Centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-color: transparent; /* Override the solid background color */
-    /* padding: 60px 20px; -- REMOVED: Now inherits larger padding from general 'header' rule */
+    /* padding was already removed/commented, min-height and flex properties will be inherited */
 }
 
 /* Adjust text color if needed for readability over the image */
@@ -334,9 +340,10 @@ footer p {
         font-size: 1rem;
     }
 
-    /* Adjusted header padding for smaller screens if needed to maintain larger size */
+    /* Adjusted min-height for smaller screens */
     header {
-        padding: 60px 20px; /* Adjust this if 80px is too much on smaller screens */
+        min-height: 180px; /* Smaller min-height for medium screens */
+        padding: 15px; /* Adjust padding for spacing */
     }
 
 
@@ -393,8 +400,10 @@ footer p {
 }
 
 @media (max-width: 480px) {
+    /* Further adjusted min-height for very small screens */
     header {
-        padding: 40px 10px; /* Further adjust for very small screens */
+        min-height: 150px; /* Even smaller min-height for small screens */
+        padding: 10px; /* Adjust padding for spacing */
     }
     header h1 {
         font-size: 2rem;
