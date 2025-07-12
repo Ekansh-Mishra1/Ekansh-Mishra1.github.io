@@ -453,3 +453,18 @@ footer p {
         margin-top: -60px;
     }
 }
+/* Make the Fillout Feedback button float like a chatbot */
+[data-fillout-id="oxdu7eEyxLus"] {
+    position: fixed !important;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+[data-fillout-id="oxdu7eEyxLus"]:hover {
+    transform: scale(1.05);
+}
