@@ -115,7 +115,7 @@ header h4 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(5px); /* Apply blur only to the pseudo-element (approx 25% visual blur) */
+    filter: blur(2.5px); /* Apply blur only to the pseudo-element (approx 25% visual blur) */
     -webkit-filter: blur(5px); /* For older WebKit browsers */
     transform: scale(1.02); /* Slightly scale up to avoid blurred edges showing */
     z-index: 1; /* Place it behind the content but above the header's direct background */
