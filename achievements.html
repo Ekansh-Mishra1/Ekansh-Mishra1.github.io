@@ -24,6 +24,22 @@
           });
         });
       });
+        let lastScrollTop = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", function () {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScroll < lastScrollTop - 10) {
+    // Scrolling up slightly (more than 10px)
+    navbar.style.top = "0";
+  } else if (currentScroll > lastScrollTop + 10) {
+    // Scrolling down slightly (more than 10px)
+    navbar.style.top = "-100px"; // Hide navbar by moving it up
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
     </script>
 </head>
 <body class="loaded">
