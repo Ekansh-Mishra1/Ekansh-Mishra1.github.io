@@ -102,8 +102,8 @@ header h4 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(1.25px);
-    -webkit-filter: blur(1.25px);
+    filter: blur(2.25px);
+    -webkit-filter: blur(2.25px);
     transform: scale(1.02);
     z-index: 1;
 }
@@ -145,6 +145,7 @@ header h4 {
     color: var(--light-text-color);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
+
 
 nav {
     background-color: var(--secondary-color);
