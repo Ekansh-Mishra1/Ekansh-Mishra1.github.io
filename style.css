@@ -458,12 +458,12 @@ footer p {
     position: fixed !important;
     bottom: 20px;
     left: 20px;
-    z-index: 10000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border-radius: 50px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+    z-index: 9999;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 }
+
 
 [data-fillout-id="oxdu7eEyxLus"]:hover {
     transform: scale(1.05);
