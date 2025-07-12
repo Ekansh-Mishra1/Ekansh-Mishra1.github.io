@@ -46,11 +46,11 @@ body.loaded {
 }
 
 
-/* Header */
+/* Header - UPDATED PADDING FOR LARGER SIZE ON ALL PAGES */
 header {
     background-color: var(--primary-color);
     color: var(--light-text-color);
-    padding: 40px 20px;
+    padding: 80px 20px; /* Made header significantly taller */
     text-align: center;
     box-shadow: var(--shadow-md);
     position: relative; /* For potential absolute positioning of elements */
@@ -75,7 +75,7 @@ header h4 {
     background-position: center; /* Centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-color: transparent; /* Override the solid background color */
-    padding: 60px 20px; /* Slightly more padding for the image */
+    /* padding: 60px 20px; -- REMOVED: Now inherits larger padding from general 'header' rule */
 }
 
 /* Adjust text color if needed for readability over the image */
@@ -85,13 +85,14 @@ header h4 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for better text readability */
 }
 
+/* Specific styling for the 'about' header with background image */
 #about {
-     background-image: url("banner.jpg"); /* Path to your image */
+    background-image: url("banner.jpg"); /* Path to your image */
     background-size: cover; /* Ensures the image covers the entire header */
     background-position: center; /* Centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-color: transparent; /* Override the solid background color */
-    padding: 60px 20px; /* Slightly more padding for the image */
+    /* padding: 60px 20px; -- REMOVED: Now inherits larger padding from general 'header' rule */
 }
 
 /* Adjust text color if needed for readability over the image */
@@ -100,6 +101,7 @@ header h4 {
     color: var(--light-text-color); /* Ensures text is visible, assuming sst.jpeg is dark */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for better text readability */
 }
+
 
 /* Navigation */
 nav {
@@ -332,6 +334,12 @@ footer p {
         font-size: 1rem;
     }
 
+    /* Adjusted header padding for smaller screens if needed to maintain larger size */
+    header {
+        padding: 60px 20px; /* Adjust this if 80px is too much on smaller screens */
+    }
+
+
     nav {
         flex-direction: column; /* Stack nav links vertically */
         align-items: center;
@@ -386,7 +394,7 @@ footer p {
 
 @media (max-width: 480px) {
     header {
-        padding: 25px 10px;
+        padding: 40px 10px; /* Further adjust for very small screens */
     }
     header h1 {
         font-size: 2rem;
