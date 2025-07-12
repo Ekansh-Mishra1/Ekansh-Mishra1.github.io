@@ -1,5 +1,3 @@
-/* style.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
@@ -35,10 +33,7 @@ body {
     transition: opacity 0.5s ease-in-out;
 }
 
-body.fade-in {
-    opacity: 1;
-}
-
+body.fade-in,
 body.loaded {
     opacity: 1;
 }
@@ -50,60 +45,52 @@ header {
     height: 250px;
     text-align: center;
     box-shadow: var(--shadow-md);
-    position: relative; /* Essential for z-index and pseudo-elements */
-
+    position: relative;
     min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Important to clip blurred edges of pseudo-element */
+    overflow: hidden;
 }
 
 header h1 {
     font-size: 3rem;
     margin-bottom: 10px;
     font-weight: 700;
-    position: relative; /* Ensure text is above pseudo-element */
-    z-index: 2; /* Ensure text is above the blurred background */
+    position: relative;
+    z-index: 2;
 }
 
 header h4 {
     font-size: 1.1rem;
     font-weight: 400;
     opacity: 0.9;
-    position: relative; /* Ensure text is above pseudo-element */
-    z-index: 2; /* Ensure text is above the blurred background */
+    position: relative;
+    z-index: 2;
 }
 
-/* Specific styling for the 'edu' header with background image */
 #edu {
     background-image: url("sst.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
-    /* No filter needed for #edu based on this request */
 }
 
-/* Adjust text color if needed for readability over the image */
 #edu h1,
 #edu h4 {
     color: var(--light-text-color);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Specific styling for the 'about' header - Set up for pseudo-element background */
 #about {
-    background-image: none; /* Remove background from #about itself */
-    background-color: transparent; /* Ensure no solid background */
-    position: relative; /* Ensure it's a positioning context for ::before */
-    overflow: hidden; /* Crucial to clip any blur bleed outside the header bounds */
-    /* min-height, display, flex-direction, justify-content, align-items, padding
-       are inherited from the general 'header' rule, which is good. */
+    background-image: none;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Pseudo-element for the blurred background image of #about */
 #about::before {
     content: '';
     position: absolute;
@@ -111,25 +98,53 @@ header h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("banner.jpg"); /* Apply image here */
+    background-image: url("banner.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(2.5px); /* Apply blur only to the pseudo-element (approx 25% visual blur) */
-    -webkit-filter: blur(5px); /* For older WebKit browsers */
-    transform: scale(1.02); /* Slightly scale up to avoid blurred edges showing */
-    z-index: 1; /* Place it behind the content but above the header's direct background */
+    filter: blur(1.25px);
+    -webkit-filter: blur(1.25px);
+    transform: scale(1.02);
+    z-index: 1;
 }
 
-
-/* Adjust text color for readability over the image */
 #about h1,
 #about h4 {
     color: var(--light-text-color);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    /* No filter here, ensuring text remains sharp */
 }
 
+#achievements {
+    background-image: none;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+#achievements::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/656bf2e501bf733c04fad6f5/1b0e841b-7fee-4306-b758-4ee303cb4e2d/Personal+Achievements.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(1.25px);
+    -webkit-filter: blur(1.25px);
+    transform: scale(1.02);
+    z-index: 1;
+}
+
+#achievements h1,
+#achievements h4 {
+    position: relative;
+    z-index: 2;
+    color: var(--light-text-color);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
 
 nav {
     background-color: var(--secondary-color);
@@ -160,7 +175,6 @@ nav a.active {
     border-radius: var(--radius);
 }
 
-/* Main Content Area */
 main, section {
     flex-grow: 1;
     max-width: 1000px;
@@ -206,7 +220,6 @@ section h3 {
     font-weight: 600;
 }
 
-/* Lists (ULs) */
 ul {
     list-style: none;
     padding: 0;
@@ -233,7 +246,6 @@ ul li strong {
     font-weight: 600;
 }
 
-/* Links within content */
 section a {
     color: var(--accent-color);
     text-decoration: none;
@@ -246,7 +258,6 @@ section a:hover {
     text-decoration: underline;
 }
 
-/* Hero Section (for index.html) */
 .hero-section {
     text-align: center;
     padding: 60px 20px;
@@ -287,7 +298,6 @@ section a:hover {
     box-shadow: var(--shadow-md);
 }
 
-/* Profile Picture Styling */
 .profile-pic {
     width: 200px;
     height: 200px;
@@ -302,7 +312,6 @@ section a:hover {
     margin-right: auto;
 }
 
-/* Certifications Page Specific */
 .cert-image {
     max-width: 100%;
     height: auto;
@@ -312,7 +321,6 @@ section a:hover {
     box-shadow: var(--shadow-md);
 }
 
-/* Footer */
 footer {
     background-color: var(--primary-color);
     color: var(--light-text-color);
@@ -331,7 +339,6 @@ footer p {
     margin: 5px 0;
 }
 
-/* Social Media Icons Container */
 .social-links {
     margin-top: 10px;
     display: flex;
@@ -350,7 +357,6 @@ footer p {
     opacity: 0.8;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2.5rem;
@@ -422,38 +428,47 @@ footer p {
         min-height: 150px;
         padding: 10px;
     }
+
     header h1 {
         font-size: 2rem;
     }
+
     header h4 {
         font-size: 0.9rem;
     }
+
     nav a {
         padding: 10px;
         font-size: 0.9em;
     }
+
     section {
         padding: 20px;
     }
+
     section h2 {
         font-size: 1.6rem;
     }
+
     section h3 {
         font-size: 1.2rem;
     }
+
     .hero-section h2 {
         font-size: 2rem;
     }
+
     .hero-section p {
         font-size: 1rem;
     }
+
     .profile-pic {
         width: 120px;
         height: 120px;
         margin-top: -60px;
     }
 }
-/* Make the Fillout Feedback button float like a chatbot */
+
 [data-fillout-id="oxdu7eEyxLus"] {
     position: fixed !important;
     bottom: 20px;
@@ -463,7 +478,6 @@ footer p {
     align-items: center;
     justify-content: center;
 }
-
 
 [data-fillout-id="oxdu7eEyxLus"]:hover {
     transform: scale(1.05);
