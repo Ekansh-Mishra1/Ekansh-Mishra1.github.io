@@ -453,3 +453,11 @@ footer p {
         margin-top: -60px;
     }
 }
+/* Force Fillout Slider to be fixed to the bottom right, overriding any conflicts */
+iframe[src*="fillout.com"],
+div[data-fillout-id="oxdu7eEyxLus"] {
+    position: fixed !important;
+    bottom: 20px !important; /* Distance from the bottom of the viewport */
+    right: 20px !important;  /* Distance from the right of the viewport */
+    z-index: 9999 !important; /* Ensures it stays on top of other content */
+}
