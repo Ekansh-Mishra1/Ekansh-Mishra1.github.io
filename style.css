@@ -68,6 +68,24 @@ header h4 {
     opacity: 0.9;
 }
 
+/* Specific styling for the 'edu' header with background image */
+#edu {
+    background-image: url("sst.jpeg"); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire header */
+    background-position: center; /* Centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-color: transparent; /* Override the solid background color */
+    padding: 60px 20px; /* Slightly more padding for the image */
+}
+
+/* Adjust text color if needed for readability over the image */
+#edu h1,
+#edu h4 {
+    color: var(--light-text-color); /* Ensures text is visible, assuming sst.jpeg is dark */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for better text readability */
+}
+
+
 /* Navigation */
 nav {
     background-color: var(--secondary-color);
