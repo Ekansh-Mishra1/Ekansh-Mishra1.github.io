@@ -51,6 +51,7 @@ header {
     background-color: var(--primary-color);
     color: var(--light-text-color);
     padding: 20px; /* Reduced padding, height now handled by min-height */
+    height: 450px;
     text-align: center; /* Still center text for non-flexbox content or fallbacks */
     box-shadow: var(--shadow-md);
     position: relative; /* For potential absolute positioning of elements */
@@ -91,7 +92,7 @@ header h4 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for better text readability */
 }
 
-/* Specific styling for the 'about' header with background image */
+/* Specific styling for the 'about' header with background image - BLUR ADDED HERE */
 #about {
     background-image: url("banner.jpg"); /* Path to your image */
     background-size: cover; /* Ensures the image covers the entire header */
@@ -99,11 +100,15 @@ header h4 {
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-color: transparent; /* Override the solid background color */
     /* padding was already removed/commented, min-height and flex properties will be inherited */
+
+    filter: blur(5px); /* Apply a blur effect to the background image */
+    -webkit-filter: blur(5px); /* For older WebKit browsers (e.g., Safari) */
 }
 
 /* Adjust text color if needed for readability over the image */
 #about h1,
 #about h4 {
+    /* These styles are applied directly to the text, so they won't be blurred by the parent's filter */
     color: var(--light-text-color); /* Ensures text is visible, assuming sst.jpeg is dark */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for better text readability */
 }
