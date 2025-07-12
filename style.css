@@ -140,7 +140,7 @@ nav {
     flex-wrap: wrap;
     padding: 10px 0;
     position: fixed;
-    top: 250;
+    top: 250px;
     z-index: 1000;
 }
 
