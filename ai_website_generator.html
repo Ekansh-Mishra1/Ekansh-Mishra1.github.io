@@ -264,4 +264,22 @@
     
     <script src="transition.js"></script>
 </body>
+    <script>
+    let lastScrollTop = 0;
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", function () {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScroll < lastScrollTop - 10) {
+        // Scrolled up more than 10px
+        navbar.style.top = "0";
+      } else if (currentScroll > lastScrollTop + 10) {
+        // Scrolled down more than 10px
+        navbar.style.top = "-100px"; // Adjust based on navbar height
+      }
+
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+  </script>
 </html>
