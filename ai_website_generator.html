@@ -1,306 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Webpage AI</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.body.classList.add("fade-in");
-    
-        const links = document.querySelectorAll("a[href]");
-        links.forEach(link => {
-          link.addEventListener("click", function (e) {
-            const target = link.getAttribute("href");
-            if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
-              e.preventDefault();
-              document.body.classList.remove("fade-in");
-              document.body.style.opacity = 0;
-              setTimeout(() => {
-                window.location.href = target;
-              }, 300); // Adjust to match transition
-            }
-          });
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini Webpage AI</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+      const links = document.querySelectorAll("a[href]");
+      links.forEach(link => {
+        link.addEventListener("click", function (e) {
+          const target = link.getAttribute("href");
+          if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
+            e.preventDefault();
+            document.body.classList.remove("fade-in");
+            document.body.style.opacity = 0;
+            setTimeout(() => {
+              window.location.href = target;
+            }, 300);
+          }
         });
       });
-    </script>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f7f9fb;
-        }
-        /* Custom scrollbar for better look in code/preview areas */
-        .custom-scroll::-webkit-scrollbar {
-            width: 8px;
-        }
-        .custom-scroll::-webkit-scrollbar-thumb {
-            background-color: #cbd5e1;
-            border-radius: 4px;
-        }
-        .custom-scroll::-webkit-scrollbar-track {
-            background-color: #f1f1f1;
-        }
-        /* Style for the preview iframe to ensure it fills the container */
-        #previewFrame {
-            width: 100%;
-            min-height: 400px;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem; /* rounded-xl */
-        }
-    </style>
-</head>
-<body class="min-h-screen p-4 sm:p-8">
-    
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="my_skills.html">My Skills</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="education.html">Education</a>
-      <a href="work.html">"Work" Experience</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="hireme.html">Hire Me</a>
-      <a href="ai_website_generator.html">AI Website Generator (Vibe Coding)</a>
-  </nav>
-
-    <h1>Vibe Coding project</h1>
-    
-    <div id="app" class="max-w-7xl mx-auto">
-
-        <!-- Header -->
-        <header class="text-center mb-10">
-            <h1 class="text-4xl font-extrabold text-indigo-700 mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-8 h-8 mr-2 -mt-1 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                Gemini Webpage Architect
-            </h1>
-            <p class="text-gray-600 text-lg">Describe the webpage you want, and the AI will build the HTML.</p>
-        </header>
-
-        <!-- Input Area -->
-        <div class="bg-white p-6 rounded-xl shadow-lg mb-8 border border-gray-100">
-            <label for="prompt" class="block text-xl font-semibold text-gray-700 mb-3">
-                Webpage Description
-            </label>
-            <textarea id="prompt" rows="3" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 custom-scroll resize-none" placeholder="E.g., A minimalist, dark-themed blog layout about astronomy, with a navigation bar and three main article cards."></textarea>
-            <button id="generateButton" onclick="generateWebpage()" class="mt-4 w-full sm:w-auto px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 transition duration-150 disabled:bg-indigo-400">
-                Generate Webpage
-            </button>
-        </div>
-
-        <!-- Loading & Status -->
-        <div id="statusMessage" class="hidden text-center p-4 rounded-lg text-sm mb-6 font-medium"></div>
-
-        <!-- Output and Preview Grid -->
-        <div class="grid lg:grid-cols-2 gap-8">
-            <!-- Code Output -->
-            <div>
-                <h2 class="text-2xl font-bold text-gray-700 mb-3">Generated HTML Code</h2>
-                <div class="bg-gray-800 text-white p-4 rounded-xl shadow-inner h-96 overflow-y-auto custom-scroll">
-                    <pre id="codeOutput" class="text-sm whitespace-pre-wrap"></pre>
-                </div>
-                <button id="copyButton" onclick="copyCode()" class="mt-3 w-full sm:w-auto px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded-lg hover:bg-gray-300 transition duration-150 disabled:opacity-50" disabled>
-                    Copy Code
-                </button>
-            </div>
-
-            <!-- Live Preview -->
-            <div>
-                <h2 class="text-2xl font-bold text-gray-700 mb-3">Live Preview</h2>
-                <iframe id="previewFrame" srcdoc="<p style='padding: 2rem; text-align: center; color: #6b7280;'>Generated page will appear here. Try describing a simple landing page!</p>"></iframe>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // *** IMPORTANT ***
-        // The API key is now set here.
-        const API_KEY = "AIzaSyAGa5DKVzrUj-qMs58tUKq8f1Iik3dES3c"; 
-        const MODEL_NAME = "gemini-2.5-flash-preview-09-2025";
-        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${API_KEY}`;
-        
-        // --- Utility Functions ---
-
-        /**
-         * Generic function to display status or error messages.
-         * @param {string} message - The message to display.
-         * @param {boolean} isError - If true, displays as an error message.
-         */
-        function showStatus(message, isError = false) {
-            const statusDiv = document.getElementById('statusMessage');
-            statusDiv.textContent = message;
-            statusDiv.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
-
-            if (isError) {
-                statusDiv.classList.add('bg-red-100', 'text-red-700');
-            } else {
-                statusDiv.classList.add('bg-green-100', 'text-green-700');
-            }
-        }
-
-        /**
-         * Robust fetch implementation with exponential backoff for retries.
-         * @param {string} url - The API endpoint URL.
-         * @param {object} options - Fetch request options.
-         * @param {number} maxRetries - Maximum number of retries.
-         * @returns {Promise<Response>}
-         */
-        async function exponentialBackoffFetch(url, options, maxRetries = 5) {
-            for (let i = 0; i < maxRetries; i++) {
-                try {
-                    const response = await fetch(url, options);
-                    if (response.ok) {
-                        return response;
-                    }
-
-                    // Retry only on recoverable errors (e.g., rate limits, server errors)
-                    if (response.status >= 500 || response.status === 429) {
-                        if (i < maxRetries - 1) {
-                            const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
-                            await new Promise(resolve => setTimeout(resolve, delay));
-                            continue;
-                        }
-                    }
-                    
-                    // Throw for unrecoverable errors (e.g., 400, 401, 404)
-                    const errorJson = await response.json();
-                    throw new Error(`API Error: ${response.status} - ${errorJson.error?.message || response.statusText}`);
-
-                } catch (error) {
-                    if (i === maxRetries - 1) {
-                        throw error;
-                    }
-                }
-            }
-        }
-
-        /**
-         * Copies the generated HTML code to the clipboard.
-         */
-        function copyCode() {
-            const codeOutput = document.getElementById('codeOutput').textContent;
-            
-            // Use document.execCommand('copy') for better iframe compatibility
-            const tempTextarea = document.createElement('textarea');
-            tempTextarea.value = codeOutput;
-            document.body.appendChild(tempTextarea);
-            tempTextarea.select();
-            
-            try {
-                document.execCommand('copy');
-                showStatus('Code copied to clipboard!', false);
-            } catch (err) {
-                showStatus('Failed to copy code. Please copy manually.', true);
-            }
-            
-            document.body.removeChild(tempTextarea);
-        }
-
-        // --- Main Logic ---
-
-        async function generateWebpage() {
-            const promptInput = document.getElementById('prompt');
-            const button = document.getElementById('generateButton');
-            const codeOutput = document.getElementById('codeOutput');
-            const previewFrame = document.getElementById('previewFrame');
-            const copyButton = document.getElementById('copyButton');
-
-            const userQuery = promptInput.value.trim();
-
-            if (!userQuery) {
-                showStatus('Please enter a description of the webpage you want to create.', true);
-                return;
-            }
-
-            // 1. Set Loading State
-            button.disabled = true;
-            copyButton.disabled = true;
-            codeOutput.textContent = 'Generating HTML...';
-            previewFrame.srcdoc = `<div style="padding: 2rem; text-align: center; font-family: 'Inter', sans-serif;">
-                <h2 style="color: #4f46e5; animation: blink 1s infinite;">Building your website...</h2>
-                <style>@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; }}</style>
-            </div>`;
-            showStatus('Sending request to AI. This may take a few moments...', false);
-
-            // 2. Define System Instruction and Payload
-            const systemPrompt = "You are an expert web developer. Your sole task is to generate a complete, standalone, responsive HTML document based on the user's description. The output MUST start with `<!DOCTYPE html>` and contain all necessary CSS (preferably using Tailwind CSS via a CDN script tag) and JavaScript within the single file. Do not include any external comments or markdown formatting (like ```html) outside of the HTML document itself. The page must be aesthetically pleasing and fully responsive on mobile.";
-
-            const payload = {
-                contents: [{ parts: [{ text: userQuery }] }],
-                systemInstruction: {
-                    parts: [{ text: systemPrompt }]
-                },
-                // Optionally, request grounding for concepts/designs, but for code generation, it might introduce external noise. Keeping it simple here.
-            };
-
-            // 3. Call API
-            try {
-                const response = await exponentialBackoffFetch(API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                const result = await response.json();
-                const candidate = result.candidates?.[0];
-                let generatedHtml = '';
-
-                if (candidate && candidate.content?.parts?.[0]?.text) {
-                    generatedHtml = candidate.content.parts[0].text;
-                } else {
-                    throw new Error('No valid content generated by the AI.');
-                }
-
-                // Clean up any stray markdown backticks or comments the model might have included
-                generatedHtml = generatedHtml.replace(/```html\n|```/g, '').trim();
-
-                // 4. Update Outputs
-                codeOutput.textContent = generatedHtml;
-                previewFrame.srcdoc = generatedHtml; // Render the HTML in the iframe
-                copyButton.disabled = false;
-                showStatus('Webpage generated successfully!', false);
-
-            } catch (error) {
-                console.error('Generation Error:', error);
-                codeOutput.textContent = `Error: Failed to generate HTML. ${error.message}`;
-                previewFrame.srcdoc = `<p style="padding: 2rem; text-align: center; color: #dc2626;">Error generating page: ${error.message}</p>`;
-                showStatus(`Failed to generate webpage: ${error.message}`, true);
-            } finally {
-                // 5. Restore State
-                button.disabled = false;
-            }
-        }
-    </script>
-    <div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider"
-     data-fillout-button-text="Feedback"
-     data-fillout-slider-direction="right"
-     data-fillout-inherit-parameters
-     data-fillout-popup-size="medium">
-</div>
-<script src="https://server.fillout.com/embed/v1/"></script>
-    
-    <script src="transition.js"></script>
-</body>
-    <script>
-    let lastScrollTop = 0;
-    const navbar = document.getElementById("navbar");
-
-    window.addEventListener("scroll", function () {
-      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (currentScroll < lastScrollTop - 10) {
-        // Scrolled up more than 10px
-        navbar.style.top = "0";
-      } else if (currentScroll > lastScrollTop + 10) {
-        // Scrolled down more than 10px
-        navbar.style.top = "-100px"; // Adjust based on navbar height
-      }
-
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
   </script>
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f9fb;
+      margin: 0;
+      padding: 0;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 8px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+    #previewFrame {
+      width: 100%;
+      min-height: 400px;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- NAVIGATION -->
+  <nav class="w-full bg-white shadow p-4 flex flex-wrap justify-center gap-4 sticky top-0 z-50">
+    <a href="index.html" class="hover:text-indigo-600">Home</a>
+    <a href="about.html" class="hover:text-indigo-600">About Me</a>
+    <a href="my_skills.html" class="hover:text-indigo-600">My Skills</a>
+    <a href="achievements.html" class="hover:text-indigo-600">Achievements</a>
+    <a href="certifications.html" class="hover:text-indigo-600">Certifications</a>
+    <a href="education.html" class="hover:text-indigo-600">Education</a>
+    <a href="work.html" class="hover:text-indigo-600">"Work" Experience</a>
+    <a href="leadership.html" class="hover:text-indigo-600">Leadership</a>
+    <a href="hireme.html" class="hover:text-indigo-600">Hire Me</a>
+    <a href="ai_website_generator.html" class="hover:text-indigo-600">AI Website Generator (Vibe Coding)</a>
+  </nav>
+
+  <main class="w-full px-6 sm:px-10 py-10"> <!-- 👈 full width with some padding -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-extrabold text-indigo-700 mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-8 h-8 mr-2 -mt-1 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        Gemini Webpage Architect
+      </h1>
+      <p class="text-gray-600 text-lg">Describe the webpage you want, and the AI will build the HTML.</p>
+    </header>
+
+    <!-- Input Section -->
+    <section class="bg-white p-8 rounded-xl shadow-lg mb-10 border border-gray-100 w-full">
+      <label for="prompt" class="block text-xl font-semibold text-gray-700 mb-3">
+        Webpage Description
+      </label>
+      <textarea id="prompt" rows="3"
+        class="w-full p-4 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 custom-scroll resize-none"
+        placeholder="E.g., A minimalist, dark-themed blog layout about astronomy, with a navigation bar and three main article cards."></textarea>
+      <button id="generateButton" onclick="generateWebpage()"
+        class="mt-4 w-full sm:w-auto px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 transition duration-150 disabled:bg-indigo-400">
+        Generate Webpage
+      </button>
+    </section>
+
+    <div id="statusMessage" class="hidden text-center p-4 rounded-lg text-sm mb-6 font-medium"></div>
+
+    <!-- Output + Preview (now full screen width) -->
+    <section class="grid lg:grid-cols-2 gap-8 w-full">
+      <!-- Code Output -->
+      <div class="w-full">
+        <h2 class="text-2xl font-bold text-gray-700 mb-3">Generated HTML Code</h2>
+        <div class="bg-gray-800 text-white p-4 rounded-xl shadow-inner h-96 overflow-y-auto custom-scroll">
+          <pre id="codeOutput" class="text-sm whitespace-pre-wrap"></pre>
+        </div>
+        <button id="copyButton" onclick="copyCode()" class="mt-3 w-full sm:w-auto px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded-lg hover:bg-gray-300 transition duration-150 disabled:opacity-50" disabled>
+          Copy Code
+        </button>
+      </div>
+
+      <!-- Live Preview -->
+      <div class="w-full">
+        <h2 class="text-2xl font-bold text-gray-700 mb-3">Live Preview</h2>
+        <iframe id="previewFrame"
+          srcdoc="<p style='padding: 2rem; text-align: center; color: #6b7280;'>Generated page will appear here. Try describing a simple landing page!</p>"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- Fillout Feedback Embed -->
+  <div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider"
+    data-fillout-button-text="Feedback"
+    data-fillout-slider-direction="right"
+    data-fillout-inherit-parameters
+    data-fillout-popup-size="medium">
+  </div>
+  <script src="https://server.fillout.com/embed/v1/"></script>
+
+  <script src="transition.js"></script>
+
+  <script>
+    const API_KEY = "AIzaSyAGa5DKVzrUj-qMs58tUKq8f1Iik3dES3c";
+    const MODEL_NAME = "gemini-2.5-flash-preview-09-2025";
+    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${API_KEY}`;
+
+    function showStatus(message, isError = false) {
+      const statusDiv = document.getElementById('statusMessage');
+      statusDiv.textContent = message;
+      statusDiv.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
+      if (isError) {
+        statusDiv.classList.add('bg-red-100', 'text-red-700');
+      } else {
+        statusDiv.classList.add('bg-green-100', 'text-green-700');
+      }
+    }
+
+    async function exponentialBackoffFetch(url, options, maxRetries = 5) {
+      for (let i = 0; i < maxRetries; i++) {
+        try {
+          const response = await fetch(url, options);
+          if (response.ok) return response;
+          if (response.status >= 500 || response.status === 429) {
+            if (i < maxRetries - 1) {
+              const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+              await new Promise(res => setTimeout(res, delay));
+              continue;
+            }
+          }
+          const errorJson = await response.json();
+          throw new Error(`API Error: ${response.status} - ${errorJson.error?.message || response.statusText}`);
+        } catch (error) {
+          if (i === maxRetries - 1) throw error;
+        }
+      }
+    }
+
+    function copyCode() {
+      const codeOutput = document.getElementById('codeOutput').textContent;
+      const tempTextarea = document.createElement('textarea');
+      tempTextarea.value = codeOutput;
+      document.body.appendChild(tempTextarea);
+      tempTextarea.select();
+      try {
+        document.execCommand('copy');
+        showStatus('Code copied to clipboard!');
+      } catch (err) {
+        showStatus('Failed to copy code.', true);
+      }
+      document.body.removeChild(tempTextarea);
+    }
+
+    async function generateWebpage() {
+      const promptInput = document.getElementById('prompt');
+      const button = document.getElementById('generateButton');
+      const codeOutput = document.getElementById('codeOutput');
+      const previewFrame = document.getElementById('previewFrame');
+      const copyButton = document.getElementById('copyButton');
+
+      const userQuery = promptInput.value.trim();
+      if (!userQuery) {
+        showStatus('Please enter a description.', true);
+        return;
+      }
+
+      button.disabled = true;
+      copyButton.disabled = true;
+      codeOutput.textContent = 'Generating HTML...';
+      previewFrame.srcdoc = `<div style="padding: 2rem; text-align: center;">Building your website...</div>`;
+      showStatus('Sending request to AI...');
+
+      const systemPrompt = "You are an expert web developer. Generate a full standalone responsive HTML document using Tailwind. No markdown.";
+      const payload = { contents: [{ parts: [{ text: userQuery }] }], systemInstruction: { parts: [{ text: systemPrompt }] } };
+
+      try {
+        const response = await exponentialBackoffFetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        const candidate = result.candidates?.[0];
+        let generatedHtml = candidate?.content?.parts?.[0]?.text || '';
+        generatedHtml = generatedHtml.replace(/```html\n|```/g, '').trim();
+        codeOutput.textContent = generatedHtml;
+        previewFrame.srcdoc = generatedHtml;
+        copyButton.disabled = false;
+        showStatus('Webpage generated successfully!');
+      } catch (error) {
+        codeOutput.textContent = `Error: ${error.message}`;
+        previewFrame.srcdoc = `<p style='padding: 2rem; text-align: center; color: red;'>${error.message}</p>`;
+        showStatus(`Error: ${error.message}`, true);
+      } finally {
+        button.disabled = false;
+      }
+    }
+  </script>
+</body>
 </html>
