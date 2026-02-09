@@ -1,91 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-9">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Experience - Ekansh's Portfolio</title>
+    <title>Work Experience - Ekansh</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-      body {
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-      }
-      body.fade-in {
-        opacity: 1;
-      }
-    </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.body.classList.add("fade-in");
-    
-        const links = document.querySelectorAll("a[href]");
-        links.forEach(link => {
-          link.addEventListener("click", function (e) {
-            const target = link.getAttribute("href");
-            if (target && !target.startsWith("#") && !link.target) {
-              e.preventDefault();
-              document.body.classList.remove("fade-in");
-              document.body.style.opacity = 0;
-              setTimeout(() => {
-                window.location.href = target;
-              }, 300); // Adjust to match transition
-            }
-          });
-        });
-      });
-    </script>
-
 </head>
-<body class="loaded">
+<body>
 
     <header>
-        <h1>"Work" Experience</h1>
+        <h1>Professional Experience</h1>
     </header>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="my_skills.html">My Skills</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="education.html">Education</a>
-      <a href="work.html">"Work" Experience</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="hireme.html">Hire Me</a>
-      <a href="ai_website_generator.html">AI Website Generator (Vibe Coding)</a>
-  </nav>
- 
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="my_skills.html">Skills</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">Experience</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="hireme.html">Hire Me</a>
+    </nav>
+
     <section>
-        <h2>"Work" Experience</h2>
-        <ul>
-            <li><strong>Co-Founder/COO</strong> - The Somthing Company (Jan 2026 - Present)</li>
-            <li><strong>Employee</strong> - <a href="https://www.sstinc.org/" target="_blank">SST INC.</a> (May 2025 - Present)</li>
-            <li><strong>Head of Community Engagement Department</strong> - <a href="https://web.kidslearncode.org/" target="_blank">Kids Learn Code</a> (April 2025 - May 2025)</li>
-            <li><strong>Sentinel Programme Member</strong> - <a href="https://www.mindef.gov.sg/dis/sentinel" target="_blank">Sentinel Programme</a> DIS (MINDEF/SAF) Singapore (March 2025 - Present)</li>
-            <li><strong>Software Developer | Curriculum Developer (Core Team)</strong> - <a href="https://web.kidslearncode.org/" target="_blank">Kids Learn Code</a> (April 2025 - December 2025)</li>
-            <li><strong>Manager of KLC LMS</strong> - <a href="https://web.kidslearncode.org/" target="_blank">Kids Learn Code</a> (April 2025 - May 2025)</li>
-        </ul>
-        </ul>
+        <div class="exp-card">
+            <h3>Co-Founder/COO</h3>
+            <p>The Somthing Company | Jan 2026 - Present</p>
+        </div>
+        <div class="exp-card">
+            <h3>Employee</h3>
+            <p>SST INC. | May 2025 - Present</p>
+        </div>
+        <div class="exp-card">
+            <h3>Sentinel Programme Member</h3>
+            <p>DIS (MINDEF/SAF) Singapore | Mar 2025 - Present</p>
+        </div>
+        <div class="exp-card">
+            <h3>Core Team: Software Developer</h3>
+            <p>Kids Learn Code | Apr 2025 - Dec 2025</p>
+        </div>
     </section>
 
-    <footer>
-        <p>Developed by Ekansh Mishra</p>
-        <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/ekansh-mishra1" target="_blank" aria-label="LinkedIn Profile">
-                <img src="linkedin-logo.png" alt="LinkedIn Logo" height="30px" width="30px">
-            </a>
-        </div>
-    </footer>
-
-    <div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider"
-     data-fillout-button-text="Feedback"
-     data-fillout-slider-direction="right"
-     data-fillout-inherit-parameters
-     data-fillout-popup-size="medium">
-</div>
-<script src="https://server.fillout.com/embed/v1/"></script>
-    
     <script src="transition.js"></script>
 </body>
 </html>
