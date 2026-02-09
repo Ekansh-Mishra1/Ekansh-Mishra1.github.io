@@ -3,194 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achievements - Ekansh's Portfolio</title>
+    <title>Achievements - Ekansh</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.body.classList.add("fade-in");
-    
-        const links = document.querySelectorAll("a[href]");
-        links.forEach(link => {
-          link.addEventListener("click", function (e) {
-            const target = link.getAttribute("href");
-            if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
-              e.preventDefault();
-              document.body.classList.remove("fade-in");
-              document.body.style.opacity = 0;
-              setTimeout(() => {
-                window.location.href = target;
-              }, 300); // Adjust to match transition
-            }
-          });
-        });
-      });
-    </script>
 </head>
-<body class="loaded">
-
-    <header id="achievements">
+<body>
+    <header>
         <h1>Achievements</h1>
     </header>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="my_skills.html">My Skills</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="education.html">Education</a>
-      <a href="work.html">"Work" Experience</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="hireme.html">Hire Me</a>
-      <a href="ai_website_generator.html">AI Website Generator (Vibe Coding)</a>
-  </nav>
- 
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="my_skills.html">Skills</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">Experience</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="hireme.html">Hire Me</a>
+    </nav>
+
     <section>
-        <h2>Achievements</h2>
-        <ul>
-            <li>
-                <details>
-                    <summary><b>Sasmo:</b> 2021 (Honourable Mention), 2022 (Bronze), 2023 (Silver), 2024 (Bronze), 2025 (Participation)</summary>
-                    <ul>
-                        <li><img src="Sasmo.jpg" width="660" height="510"></li>
-                        <li><img src="Sasmo2.jpg" width="660" height="510"></li>
-                        <li>Sasmo Bronze for 2024</li>
-                    </ul>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary><b>SMKC:</b> 2021 (Participation), 2022 (Honourable Mention), 2023 (Participation), 2024 (Bronze)</summary>
-                    <ul>
-                        <li><img src="Kangaroo.jpg" width="660" height="510"></li>
-                        <li><img src="Kangaroo2.jpg" width="660" height="510"></li>
-                        <li>SMKC Bronze for 2024</li>
-                    </ul>
-                </details>
-            </li>
-            <li><b>APMOPS:</b> 2023 (Participation), 2024 (Participation)</li>
-            <li>
-                <details>
-                    <summary><b>Story Telling</b> in Beacon Primary School: Second in class (2022), First in class (2021, 2023), Second in level (2021, 2023)</summary>
-                    <ul>
-                        <li><img src="Storytelling.jpg" width="660" height="510"></li>
-                        <li><img src="Storytelling2.jpg" width="660" height="510"></li>
-                        <li><img src="Storytelling3.jpg" width="660" height="510"></li>
-                        <li><img src="Storytelling4.jpg" width="660" height="510"></li>
-                    </ul>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary><b>Excellence in ICT Scholarship (EICTS)</b> for years (2022, 2023, and 2024)</summary>
-                    <ul>
-                        <li><img src="EICTS.jpg" width="660" height="510"></li>
-                    </ul>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary><b>Science Fair</b> in Beacon Primary School 2021 Achievements: Closed Category: Top 5 (3rd), Open Category: Participation</summary>
-                    <ul>
-                        <li><img src="Scifair.jpg" width="660" height="510"></li>
-                        <li><img src="Scifair2.jpg" width="660" height="510"></li>
-                    </ul>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary><b>Beacon Achievement Ceremony (BAC)</b>: EICTS (mentioned above), Best Achievement in Class (2020), Best Achievement in Physical and Health Education (2023)</summary>
-                    <ul>
-                        <li><img src="BestInClass.jpg" width="660" height="510"></li>
-                        <li><img src="PE.jpg" width="660" height="510"></li>
-                    </ul>
-                </details>
-            </li>
-            <li><b>IDE Robotics competition</b> (2024): Represented Beacon Primary School</li>
-            <li><b>Best Design for the Adopt-A-Float Programme</b> by GoBGC for the School of Science and Technology's adopted float</li>
-            <li>
-                <details>
-                    <summary><b>Story Telling in the Sky Team Excellence award</b> by IMDA in partnership with 65 Drones</summary>
-                    <ul>
-                        <li><img src="drone2.jpg" width="604" height="806"></li>
-                        <li><img src="drone.jpg" width="604" height="806"></li>
-                    </ul>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary><b>NRC 2025 Regular</b> Represented School of Science and Technology, Singapore</summary>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary><b>International Applied Mathematical Olympiad(IAMO)</b> by Indonesia Scientific Society: Represented School of Science and Technology, Singapore and Singapore and won the Bronze Award</summary>
-                    <ul>
-                        <li><img src="IAMO-CertnMedal.png" height="450px" width="300px"></li>
-                        <li><img src="IAMO-AwardCeremony.jpg" height="306" width="410"></li>
-                    </ul>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary><b>Big Science Competition</b> by Australian Science Innovation(ASI): High Distinction(2025)</summary>
-                    <ul>
-                        <li><img src="Big-Science.png"></li>
-                    </ul>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary><b>Australlian Math Competition(AMC)</b> by Australian Math Trust(AMT): Distinction(2025)</summary>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary><b>SST Change Makers InnoFest</b> in School of Science and Technology: Won in all 3 categories (Best Prototype, Best Media, Most Innovative Solution)</summary>
-                    <ul>
-                        <li><img src="Innofest-Awards.jpg" height="480px" width="360px"></li>
-                    </ul>
-                </details>
-            </li>
-        </ul>
+        <div class="exp-card">
+            <h3>SASMO Math Olympiad</h3>
+            <p>2023 Silver | 2022 & 2024 Bronze | 2021 Honorable Mention</p>
+            <details>
+                <summary>View Medals</summary>
+                <img src="Sasmo.jpg" alt="Sasmo" style="margin-top:10px; border-radius:10px;">
+                <img src="Sasmo2.jpg" alt="Sasmo" style="margin-top:10px; border-radius:10px;">
+            </details>
+        </div>
+
+        <div class="exp-card">
+            <h3>International Applied Math Olympiad (IAMO)</h3>
+            <p><strong>Bronze Award</strong> - Representing Singapore & SST</p>
+            <details>
+                <summary>View Certificate</summary>
+                <img src="IAMO-CertnMedal.png" alt="IAMO" style="max-width:300px; margin-top:10px;">
+            </details>
+        </div>
+
+        <div class="exp-card">
+            <h3>SST Change Makers InnoFest</h3>
+            <p><strong>Winner in 3 Categories:</strong> Best Prototype, Best Media, Most Innovative Solution</p>
+        </div>
+
+        <div class="exp-card">
+            <h3>Big Science Competition (ASI)</h3>
+            <p><strong>High Distinction (2025)</strong></p>
+        </div>
+
+        <div class="exp-card">
+            <h3>Storytelling - Beacon Primary</h3>
+            <p>1st in Class (2021, 2023) | 2nd in Level (2021, 2023)</p>
+        </div>
     </section>
 
-    <footer>
-        <p>Developed by Ekansh Mishra</p>
-        <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/ekansh-mishra1" target="_blank" aria-label="LinkedIn Profile">
-                <img src="linkedin-logo.png" alt="LinkedIn Logo" height="30px" width="30px">
-            </a>
-        </div>
-    </footer>
-
-    <div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider"
-     data-fillout-button-text="Feedback"
-     data-fillout-slider-direction="right"
-     data-fillout-inherit-parameters
-     data-fillout-popup-size="medium">
-</div>
-<script src="https://server.fillout.com/embed/v1/"></script>
-    
     <script src="transition.js"></script>
 </body>
-    <script>
-    let lastScrollTop = 0;
-    const navbar = document.getElementById("navbar");
-
-    window.addEventListener("scroll", function () {
-      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (currentScroll < lastScrollTop - 10) {
-        // Scrolled up more than 10px
-        navbar.style.top = "0";
-      } else if (currentScroll > lastScrollTop + 10) {
-        // Scrolled down more than 10px
-        navbar.style.top = "-100px"; // Adjust based on navbar height
-      }
-
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    });
-  </script>
 </html>
