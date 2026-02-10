@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const mainContent = document.getElementById("main-content");
     let i = 0;
 
-    // Check if animation has already played in this session
+    // Check if the user has already seen the animation in this session
     const hasSeenAnimation = sessionStorage.getItem("animationPlayed");
 
     if (typedElement && !hasSeenAnimation) {
-        // Run Animation
+        // FIRST TIME ENTRY: Run the typing animation
         function type() {
             if (i < textToType.length) {
                 typedElement.textContent += textToType.charAt(i);
@@ -19,19 +19,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     splash.style.transform = "translateY(-100%)";
                     mainContent.style.opacity = "1";
-                    // Save to session storage so it doesn't run again
+                    // Record that the animation has now been played
                     sessionStorage.setItem("animationPlayed", "true");
                 }, 600);
             }
         }
         type();
     } else {
-        // Skip Animation: Immediately show content
-        if (splash) splash.style.display = "none";
-        if (mainContent) {
-            mainContent.style.opacity = "1";
-            mainContent.style.transition = "none"; // Remove delay for instant load
+        // RETURNING TO HOME or OTHER PAGES: Skip animation entirely
+        if (splash) {
+            splash.style.display = "none"; // Remove the splash screen immediately
         }
+        if (mainContent) {
+            mainContent.style.opacity = "1"; // Show content instantly
+            mainContent.style.transition = "none"; 
+        }
+        // Ensure body is visible for sub-pages
         document.body.style.opacity = "1";
     }
 });
