@@ -5,67 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Ekansh's Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            document.body.classList.add("fade-in");
-
-            const links = document.querySelectorAll("a[href]");
-            links.forEach(link => {
-                link.addEventListener("click", function (e) {
-                    const target = link.getAttribute("href");
-                    if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
-                        e.preventDefault();
-                        document.body.classList.remove("fade-in");
-                        document.body.style.opacity = 0;
-                        setTimeout(() => {
-                            window.location.href = target;
-                        }, 300); // Adjust to match transition
-                    }
-                });
-            });
-        });
-    </script>
 </head>
 <body class="loaded">
 
-    <header id="about">
+    <header>
         <h1>About Me</h1>
+        <p>A glimpse into who I am and what I do.</p>
     </header>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="my_skills.html">My Skills</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="education.html">Education</a>
-      <a href="work.html">"Work" Experience</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="hireme.html">Hire Me</a>
-      <a href="ai_website_generator.html">AI Website Generator (Vibe Coding)</a>
-  </nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="my_skills.html">My Skills</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">Experience</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="hireme.html">Hire Me</a>
+    </nav>
+ 
+    <section>
+        <h2>The Journey</h2>
+        <p>
+            I am a student at the <strong>School of Science and Technology (SST)</strong> in Singapore. 
+            My passion for technology started early, leading me to explore everything from 
+            web development to robotics and cyber security.
+        </p>
+        <p>
+            I believe in "learning by doing"—whether that's building an app, leading a class discussion, 
+            or competing in math olympiads. I am always looking for the next challenge to grow my skillset.
+        </p>
+
+        <div style="margin-top: 30px;">
+            <h3>Featured Recognition</h3>
+            <p style="color: var(--text-dim); margin-bottom: 15px;">Recognition as a Code Young Star:</p>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; border: 1px solid var(--glass-border);">
+                <iframe 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                    src="https://www.youtube.com/embed/nwLRUG4_FfY" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
 
     <section>
-        <a href="https://www.linkedin.com/in/ekansh-mishra1" target="_blank" class="profile-link">
-        <img src="Photo_of_Ekansh_Mishra.jpg" alt="Ekansh Mishra Profile Picture" class="profile-pic" style="margin-top: 0;">
-        </a>
-        <h2>About Me</h2>
-        <p>Hello! I am Ekansh Mishra, an enthusiastic and curious individual with a passion for technology, particularly in areas like web development and app design. I am always eager to learn new skills and apply them in practical, impactful ways.</p>
-        <p>I enjoy participating in various competitions and projects, always striving to improve and innovate. I believe in the power of collaboration and enjoy working with others to solve complex problems and create meaningful solutions. My journey in tech is driven by a desire to build and contribute, whether it's through coding, design, or leadership.</p>
-        <p>I am keen on exploring new frontiers in the digital world and participating in collaborative projects that push the boundaries of technology.</p>
-        <br>
-        <p>I was honored to be recognized as a <b>Code Young Star</b>. You can check out my recognition video here:</p>
-       <iframe width="100%" height="500" src="https://www.youtube.com/embed/nwLRUG4_FfY" title="Codeyoung Stars- Ekansh Mishra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <br>
-        <br>
-        <h3>Languages I know</h3>
-        <ul>
-            <li>English (spoken and written)</li>
-            <li>Chinese (spoken and written/Proficiency: medium)</li>
-            <li>Odia (spoken)</li>
-        </ul>
-        <h3>About.Me Website↓</h3>
-        <a href="https://about.me/ekansh-mishra" target="_blank">Ekansh Mishra's About.Me website</a>
+        <h2>Languages</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center;">
+            <div class="exp-card">
+                <h3 style="margin: 0; color: var(--primary);">English</h3>
+                <p>Fluent / Primary</p>
+            </div>
+            <div class="exp-card">
+                <h3 style="margin: 0; color: var(--primary);">Chinese</h3>
+                <p>Proficient</p>
+            </div>
+            <div class="exp-card">
+                <h3 style="margin: 0; color: var(--primary);">Odia</h3>
+                <p>Mother Tongue</p>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -79,12 +81,12 @@
     </footer>
 
     <div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider"
-     data-fillout-button-text="Feedback"
-     data-fillout-slider-direction="right"
-     data-fillout-inherit-parameters
-     data-fillout-popup-size="medium">
-</div>
-<script src="https://server.fillout.com/embed/v1/"></script>
+         data-fillout-button-text="Feedback"
+         data-fillout-slider-direction="right"
+         data-fillout-inherit-parameters
+         data-fillout-popup-size="medium">
+    </div>
+    <script src="https://server.fillout.com/embed/v1/"></script>
     
     <script src="transition.js"></script>
 </body>
