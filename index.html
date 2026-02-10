@@ -3,78 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekansh's Portfolio</title>
+    <title>Ekansh Mishra</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="loader-overlay">
-        <div class="search-container">
-            <div class="search-bar">
-                <span class="search-icon">🔍</span>
-                <span id="typing-text"></span>
-                <span class="cursor">|</span>
-            </div>
-            <p class="search-status">Searching for secure connection...</p>
+    <div id="search-splash">
+        <div class="search-input-wrapper">
+            <span style="margin-right:10px">🔍</span>
+            <span id="typed-url" style="color: #0070f3;"></span>
+            <span class="blink-cursor">|</span>
         </div>
     </div>
 
-    <header>
-        <h1>Ekansh Mishra</h1>
-        <p>Web Developer | Innovator | Leader</p>
-    </header>
+    <div id="main-content" style="opacity: 0; transition: opacity 1s ease;">
+        <header>
+            <h1>Ekansh Mishra</h1>
+            <p>Innovator & Developer</p>
+        </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="my_skills.html">My Skills</a>
-        <a href="achievements.html">Achievements</a>
-        <a href="certifications.html">Certifications</a>
-        <a href="education.html">Education</a>
-        <a href="work.html">Experience</a>
-        <a href="leadership.html">Leadership</a>
-        <a href="hireme.html">Hire Me</a>
-    </nav>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="my_skills.html">Skills</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="education.html">Education</a>
+            <a href="work.html">Experience</a>
+            <a href="leadership.html">Leadership</a>
+            <a href="hireme.html">Hire Me</a>
+        </nav>
 
-    <main>
-        <section style="text-align: center;">
-            <img src="Photo_of_Ekansh_Mishra.jpg" alt="Ekansh Mishra" class="profile-pic">
-            <h2>Welcome to my Digital Space</h2>
-            <p>I build solutions, lead teams, and explore the future of tech.</p>
-            <a href="about.html" class="button">Explore My Journey</a>
+        <section>
+            <h2>Welcome</h2>
+            <p>I am a tech enthusiast currently studying at the School of Science and Technology. My work spans across web development, cybersecurity, and leadership.</p>
         </section>
-    </main>
+    </div>
 
-    <footer>
-        <p>Developed by Ekansh Mishra &copy; 2025</p>
-    </footer>
-
-    <script src="transition.js"></script>
     <script>
-        // Special logic for the opening animation
-        const text = "ekansh-mishra1.github.io";
-        const typingElement = document.getElementById("typing-text");
-        const loader = document.getElementById("loader-overlay");
-        let i = 0;
+        document.addEventListener("DOMContentLoaded", () => {
+            const text = "ekansh-mishra1.github.io";
+            const typedElement = document.getElementById("typed-url");
+            let i = 0;
 
-        function typeWriter() {
-            if (i < text.length) {
-                typingElement.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            } else {
-                // Wait 1 second after typing, then fade out
-                setTimeout(() => {
-                    loader.style.opacity = "0";
+            function type() {
+                if (i < text.length) {
+                    typedElement.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 100);
+                } else {
                     setTimeout(() => {
-                        loader.style.display = "none";
-                    }, 500);
-                }, 1000);
+                        document.getElementById("search-splash").style.transform = "translateY(-100%)";
+                        document.getElementById("main-content").style.opacity = "1";
+                    }, 800);
+                }
             }
-        }
-
-        // Start animation on load
-        window.onload = typeWriter;
+            setTimeout(type, 500);
+        });
     </script>
 </body>
 </html>
