@@ -1,20 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Add fade-in class to body
+    // Reveal body
     document.body.classList.add("fade-in");
-
-    // Handle all internal links for fade-out
-    const links = document.querySelectorAll("a[href]");
-    links.forEach(link => {
-        link.addEventListener("click", function (e) {
-            const target = link.getAttribute("href");
-            const isInternal = target && !target.startsWith("#") && !link.target && !target.includes("mailto:") && !target.includes("tel:");
-
-            if (isInternal) {
+    
+    // Smooth transition for links
+    document.querySelectorAll("nav a, .button").forEach(link => {
+        link.addEventListener("click", e => {
+            const href = link.getAttribute("href");
+            // Only transition for internal .html links
+            if (href && href.includes(".html")) {
                 e.preventDefault();
                 document.body.style.opacity = 0;
                 setTimeout(() => {
-                    window.location.href = target;
-                }, 400); 
+                    window.location.href = href;
+                }, 400);
             }
         });
     });
