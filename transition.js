@@ -1,7 +1,3 @@
-
-const urlParams = new URLSearchParams(window.location.search);
-const hmd = Boolean(urlParams.get("hmd"))
-if (!hmd){
 document.addEventListener("DOMContentLoaded", () => {
     const textToType = "ekansh-mishra1.github.io";
     const typedElement = document.getElementById("typed-url");
@@ -9,39 +5,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const mainContent = document.getElementById("main-content");
     let i = 0;
 
-    // 1. Check if we are on index.html and need the animation
-    if (typedElement) {
-        function typeEffect() {
+    // Check if animation has already played in this session
+    const hasSeenAnimation = sessionStorage.getItem("animationPlayed");
+
+    if (typedElement && !hasSeenAnimation) {
+        // Run Animation
+        function type() {
             if (i < textToType.length) {
                 typedElement.textContent += textToType.charAt(i);
                 i++;
-                setTimeout(typeEffect, 100);
+                setTimeout(type, 90);
             } else {
                 setTimeout(() => {
                     splash.style.transform = "translateY(-100%)";
                     mainContent.style.opacity = "1";
-                }, 800);
+                    // Save to session storage so it doesn't run again
+                    sessionStorage.setItem("animationPlayed", "true");
+                }, 600);
             }
         }
-        setTimeout(typeEffect, 500);
+        type();
     } else {
-        // For other pages, just show content immediately
+        // Skip Animation: Immediately show content
+        if (splash) splash.style.display = "none";
+        if (mainContent) {
+            mainContent.style.opacity = "1";
+            mainContent.style.transition = "none"; // Remove delay for instant load
+        }
         document.body.style.opacity = "1";
     }
-
-    // 2. Smooth Navigation Transitions
-    document.querySelectorAll("nav a").forEach(link => {
-        link.addEventListener("click", e => {
-            const destination = link.getAttribute("href");
-            if (destination.includes(".html")) {
-                e.preventDefault();
-                document.body.style.transition = "opacity 0.4s";
-                document.body.style.opacity = "0";
-                setTimeout(() => {
-                    window.location.href = destination;
-                }, 400);
-            }
-        });
-    });
 });
-}
