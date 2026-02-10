@@ -2,7 +2,7 @@
     --bg-black: #000000;
     --card-bg: #0a0a0a;
     --electric-blue: #0070f3;
-    --text-main: #ffffff;
+    --text-white: #ffffff;
     --text-dim: #888888;
     --border: #222222;
 }
@@ -11,36 +11,47 @@
 
 body {
     background-color: var(--bg-black);
-    color: var(--text-main);
+    color: var(--text-white);
     font-family: 'Inter', -apple-system, system-ui, sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
+/* Header & Intro */
 header {
     text-align: center;
     padding: 80px 20px 40px;
     background: radial-gradient(circle at center, #001a33 0%, #000000 100%);
 }
 
-/* Profile Picture Styling */
+header h1 { font-size: 3rem; text-shadow: 0 0 15px rgba(0, 112, 243, 0.5); }
+header h4 { color: var(--electric-blue); margin-top: 10px; font-weight: 500; }
+header p { color: var(--text-dim); margin-top: 5px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+
+/* Images */
 .profile-pic {
     width: 180px;
     height: 180px;
     border-radius: 50%;
     border: 3px solid var(--electric-blue);
-    object-fit: cover;
     margin-bottom: 20px;
-    box-shadow: 0 0 20px rgba(0, 112, 243, 0.3);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-pic:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px var(--electric-blue);
 }
 
-header h1 { font-size: 3rem; text-shadow: 0 0 15px rgba(0, 112, 243, 0.4); }
-header p { color: var(--electric-blue); text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+.social-links img {
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+    opacity: 0.7;
+}
 
+.social-links img:hover { filter: none; opacity: 1; }
+
+/* Navigation */
 nav {
     position: sticky; top: 0; z-index: 1000;
     background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(12px);
@@ -55,19 +66,19 @@ nav a {
 
 nav a:hover { color: var(--electric-blue); }
 
+/* Main Section */
 section {
-    max-width: 850px; margin: 2rem auto; padding: 2.5rem;
+    max-width: 800px; margin: 3rem auto; padding: 2.5rem;
     background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
 }
 
-h2 { color: var(--electric-blue); border-left: 4px solid var(--electric-blue); padding-left: 15px; margin-bottom: 20px; }
-
-.exp-card, li {
-    background: #050505; border: 1px solid var(--border);
-    padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; list-style: none;
+.button {
+    background: var(--electric-blue); color: white; text-decoration: none;
+    padding: 10px 25px; border-radius: 6px; display: inline-block; margin-top: 20px;
+    font-weight: bold; transition: 0.3s;
 }
 
-.exp-card h3 { color: var(--electric-blue); margin-bottom: 5px; }
+.button:hover { background: #0056b3; box-shadow: 0 0 15px var(--electric-blue); }
 
 /* Animation Overlay */
 #search-splash {
@@ -79,21 +90,13 @@ h2 { color: var(--electric-blue); border-left: 4px solid var(--electric-blue); p
 
 .search-bar-sim {
     border: 1px solid var(--border); padding: 15px 25px; border-radius: 30px;
-    width: 90%; max-width: 450px; background: #0a0a0a; display: flex;
+    width: 90%; max-width: 450px; background: #0a0a0a; display: flex; font-family: monospace;
 }
 
-.blink-cursor { color: var(--electric-blue); animation: blink 0.8s infinite; }
+#typed-url { color: var(--electric-blue); font-size: 1.2rem; }
+.blink-cursor { color: var(--text-white); animation: blink 0.8s infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* Social Links Footer Styling */
+#main-content { opacity: 0; transition: opacity 1s ease; }
+
 footer { text-align: center; padding: 4rem 1rem; color: var(--text-dim); font-size: 0.8rem; }
-.social-links { margin-top: 15px; }
-.social-links img { 
-    filter: brightness(0) invert(1); /* Makes icons white */
-    opacity: 0.7;
-    transition: 0.3s;
-}
-.social-links img:hover { 
-    opacity: 1; 
-    filter: none; /* Shows LinkedIn Blue on hover */
-}
