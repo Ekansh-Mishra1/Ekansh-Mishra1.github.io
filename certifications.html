@@ -3,156 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications - Ekansh's Portfolio</title>
+    <title>Certifications - Ekansh</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Specific styling for dropdowns already included in main style.css for better organization */
-        /* Keeping this block here for demonstration of previous inline styles, but ideally move to style.css */
-        details {
-            margin-bottom: 10px;
-        }
-        summary {
-            cursor: pointer;
-            font-weight: bold;
-            padding: 5px 0;
-        }
-        details[open] summary {
-            /* Style when dropdown is open */
-        }
-        details ul {
-            list-style: disc; /* Use standard disc for certificates */
-            padding-left: 30px; /* Adjust indentation */
-        }
-        details li {
-            margin-bottom: 5px;
-        }
-        /* Style for links to certificates */
-        details li a {
-            color: var(--accent-color); /* Example link color from CSS variables */
-            text-decoration: underline;
-        }
-        details li a:hover {
-            color: var(--primary-color);
-        }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            document.body.classList.add("fade-in");
-
-            const links = document.querySelectorAll("a[href]");
-            links.forEach(link => {
-                link.addEventListener("click", function (e) {
-                    const target = link.getAttribute("href");
-                    // Apply fade-out only for internal, non-hash, non-external links, AND NOT for PDF links
-                    if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
-                        e.preventDefault();
-                        document.body.classList.remove("fade-in");
-                        document.body.style.opacity = 0;
-                        setTimeout(() => {
-                            window.location.href = target;
-                        }, 300); // Adjust to match transition
-                    }
-                });
-            });
-        });
-    </script>
 </head>
-<body class="loaded">
-
+<body>
     <header>
         <h1>Certifications</h1>
     </header>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="my_skills.html">My Skills</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="education.html">Education</a>
-      <a href="work.html">"Work" Experience</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="hireme.html">Hire Me</a>
-      <a href="ai_website_generator.html">AI Website Generator (Vibe Coding)</a>
-  </nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="my_skills.html">Skills</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">Experience</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="hireme.html">Hire Me</a>
+    </nav>
 
-    <section width="900px">
-        <h2>Certifications</h2>
-        <ul>
-            <li>
-                <details>
-                    <summary>Certified in <b>HTML, CSS and Java Script</b> (Code Young)</summary>
-                    <ul>
-                        <li><img src="WebDev1.png" width="660" height="510"></li>
-                        <li><img src="WebDev2.png" width="660" height="510"></li>
-                        <li><img src="WebDev3.png" width="660" height="510"></li>
-                    </ul>
-                </details>
-            </li>
-            <li>Certified in <b>Python Programming</b> (Code Vidhya)</li>
-            <li>
-                 <details>
-                    <summary><b>Junior Lex!s Debate Masterclass</b> (ACJC))</summary>
-                    <ul>
-                        <li><img src="debate.jpg" width="222" height="320"></li>
-                    </ul>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary>Google Applied Digital Skills (Google)</summary>
-                    <ul>
-                        <li><img src="1.png" width="660" height="510"></li>
-                        <li><img src="2.png" width="660" height="510"></li>
-                        <li><img src="3.png" width="660" height="510"></li>
-                        <li><img src="4.png" width="660" height="510"></li>
-                        <li><img src="5.png" width="660" height="510"></li>
-                        <li><img src="6.png" width="660" height="510"></li>
-                        <li><img src="7.png" width="660" height="510"></li>
-                        <li><img src="8.png" width="660" height="510"></li>
-                    </ul>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary>Apple Teacher (Apple)</summary>
-                    <ul>
-                        <li>Mac Skills</li>
-                        <li>Swift Playgrounds</li>
-                        <li>Pages</li>
-                        <li>Keynote</li>
-                        <li>Numbers</li>
-                        <li>GarageBand</li>
-                        <li>iMovie</li>
-                        <li>Swift Coding</li>
-                        <li>Swift Playgrounds App</li>
-                        <li>Coding in the Classroom</li>
-                        <li><img src="ATC.png" width="660" height="510"></li>
-                        <li><img src="ATC2.png" width="660" height="510"></li>
-                    </ul>
-                </details>
-            </li>
-        </ul>
+    <section>
+        <div class="exp-card">
+            <h3>Apple Teacher</h3>
+            <p>Certified in Swift Playgrounds, Keynote, Pages, iMovie, and GarageBand.</p>
+        </div>
+
+        <div class="exp-card">
+            <h3>Web Development (Code Young)</h3>
+            <p>Certified in HTML, CSS, and JavaScript.</p>
+            <details>
+                <summary>View Certificates</summary>
+                <img src="WebDev1.png" alt="Cert" style="margin-top:10px; border-radius:5px;">
+            </details>
+        </div>
+
+        <div class="exp-card">
+            <h3>Google Applied Digital Skills</h3>
+            <p>Multi-disciplinary Digital Skill Certification</p>
+        </div>
+
+        <div class="exp-card">
+            <h3>Python Programming</h3>
+            <p>Code Vidhya Certified</p>
+        </div>
     </section>
 
-    <footer>
-        <p>Developed by Ekansh Mishra</p>
-        <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/ekansh-mishra1" target="_blank" aria-label="LinkedIn Profile">
-                <img src="linkedin-logo.png" alt="LinkedIn Logo" height="30px" width="30px">
-            </a>
-        </div>
-    </footer>
-
-    <div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider"
-     data-fillout-button-text="Feedback"
-     data-fillout-slider-direction="right"
-     data-fillout-inherit-parameters
-     data-fillout-popup-size="medium">
-</div>
-<script src="https://server.fillout.com/embed/v1/"></script>
-    
     <script src="transition.js"></script>
 </body>
 </html>
