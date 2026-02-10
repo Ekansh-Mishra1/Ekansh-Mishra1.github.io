@@ -1,3 +1,7 @@
+
+const urlParams = new URLSearchParams(window.location.search);
+const hmd = Boolean(urlParams.get("hmd"))
+if (!hmd){
 document.addEventListener("DOMContentLoaded", () => {
     const textToType = "ekansh-mishra1.github.io";
     const typedElement = document.getElementById("typed-url");
@@ -40,3 +44,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+}
