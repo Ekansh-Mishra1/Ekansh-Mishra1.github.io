@@ -5,9 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ekansh's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="transition.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("fade-in");
+            const links = document.querySelectorAll("a[href]");
+            links.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    const target = link.getAttribute("href");
+                    if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
+                        e.preventDefault();
+                        document.body.classList.remove("fade-in");
+                        document.body.classList.add("fade-out");
+                        setTimeout(() => { window.location.href = target; }, 300);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
-
-<body>
+<body class="loaded">
 
 <header>
     <h1>Ekansh's Portfolio</h1>
@@ -16,35 +33,46 @@
 </header>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="my_skills.html">My Skills</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="education.html">Education</a>
-    <a href="work.html">"Work" Experience</a>
-    <a href="leadership.html">Leadership</a>
-    <a href="hireme.html">Hire Me</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+  <a href="my_skills.html">My Skills</a>
+  <a href="achievements.html">Achievements</a>
+  <a href="certifications.html">Certifications</a>
+  <a href="education.html">Education</a>
+  <a href="work.html">"Work" Experience</a>
+  <a href="leadership.html">Leadership</a>
+  <a href="hireme.html">Hire Me</a>
+  <a href="ai_website_generator.html">AI Website Generator (Vibe Coding)</a>
 </nav>
 
 <main>
     <section class="hero-section">
-        <a href="https://www.linkedin.com/in/ekansh-mishra1" target="_blank">
+        <a href="https://www.linkedin.com/in/ekansh-mishra1" target="_blank" class="profile-link">
             <img src="Photo_of_Ekansh_Mishra.jpg" alt="Ekansh Mishra Profile Picture" class="profile-pic">
         </a>
         <h2>Hi, I'm Ekansh Mishra</h2>
-        <p class="intro-text">
-            Passionate tech enthusiast focused on web development, app design and innovation.
-        </p>
-        <a href="about.html" class="button">Learn More About Me</a>
+        <p class="intro-text">Hi, I’m Ekansh Mishra — a passionate and curious tech enthusiast with a love for web development, app design, and creative problem-solving. I thrive on learning new skills, tackling challenges, and turning ideas into impactful solutions. Whether through coding, design, or leadership, I aim to collaborate, innovate, and push the boundaries of technology.</p>
+        <a href="about.html" class="button">Learn More About Me <i class="fas fa-arrow-right"></i></a>
     </section>
 </main>
 
 <footer>
     <p>Developed by Ekansh Mishra</p>
     <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+    <div class="social-links">
+        <a href="https://linkedin.com/in/ekansh-mishra1" target="_blank" aria-label="LinkedIn Profile">
+            <img src="linkedin-logo.png" alt="LinkedIn Logo" height="30px" width="30px">
+        </a>
+    </div>
 </footer>
 
-<script src="transition.js"></script>
+<div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider"
+ data-fillout-button-text="Feedback"
+ data-fillout-slider-direction="right"
+ data-fillout-inherit-parameters
+ data-fillout-popup-size="medium">
+</div>
+<script src="https://server.fillout.com/embed/v1/"></script>
+
 </body>
 </html>
