@@ -5,42 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Skills - Ekansh's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("fade-in");
+        const links = document.querySelectorAll("a[href]");
+        links.forEach(link => {
+          link.addEventListener("click", function (e) {
+            const target = link.getAttribute("href");
+            if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
+              e.preventDefault();
+              document.body.classList.remove("fade-in");
+              document.body.style.opacity = 0;
+              setTimeout(() => {
+                window.location.href = target;
+              }, 300);
+            }
+          });
+        });
+      });
+    </script>
 </head>
-
-<body>
-
-<header>
-    <h1>My Skills</h1>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="my_skills.html">My Skills</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="education.html">Education</a>
-    <a href="work.html">"Work" Experience</a>
-    <a href="leadership.html">Leadership</a>
-    <a href="hireme.html">Hire Me</a>
-</nav>
-
-<section>
-    <h2>Programming Languages</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>Swift</li>
-    </ul>
-</section>
-
-<footer>
-    <p>Developed by Ekansh Mishra</p>
-    <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
-</footer>
-
-<script src="transition.js"></script>
+<body class="loaded">
+    <header>
+        <h1>My Skills</h1>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="my_skills.html">My Skills</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="education.html">Education</a>
+      <a href="work.html">"Work" Experience</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="hireme.html">Hire Me</a>
+      <a href="ai_website_generator.html">AI Website Generator (Vibe Coding)</a>
+  </nav>
+    <section>
+        <h2>My Skills</h2>
+        <ul>
+            <li>
+                <details>
+                    <summary>Programming Languages I Know</summary>
+                    <ul>
+                        <li>Scratch Block-Based</li>
+                        <li>Microbit Block-Based</li>
+                        <li>LEGO EV3 Block-Based</li>
+                        <li>LEGO Spike Block-Based</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JS</li>
+                        <li>Python</li>
+                        <li>Django(Learning)</li>
+                        <li>Micro Python for LEGO Spike</li>
+                        <li>Swift</li>
+                        <li>Swift UI</li>
+                        <li>Arduino IDE C++ (Minimal)</li>
+                    </ul>
+                </details>
+            </li>
+            <h3>I know how to make videos using iMovie and CapCut and animations using Keynote</h3>
+            <li>
+                <details>
+                    <summary>My Video Projects (Animations and live videos)</summary>
+                    <ul>
+                        <h4>This is a video I made to advertise my school</h4>
+                        <li><video width="320" height="240" controls>
+                              <source src="Come to SST.mp4" type="video/mp4">
+                            </video>
+                        </li>
+                        <h4>This is a video I made for my grandparents' Golden Jubilee(50th) marriage anniversary</h4>
+                        <li><video width="320" height="240" controls>
+                              <source src="Grandparents_50th_anni.mp4" type="video/mp4">
+                            </video>
+                        </li>
+                        <h4>This is a video I made for my English Performance Task</h4>
+                        <li><video width="320" height="240" controls>
+                              <source src="ELA PT.mp4" type="video/mp4">
+                            </video>
+                        </li>
+                        <h4>This is a video I made for my ICT lesson task to advertise a product. I was not given a single cent by Lamborghini.</h4>
+                        <li><video width="320" height="240" controls>
+                              <source src="Lambo-Ad.mp4" type="video/mp4">
+                            </video>
+                        </li>
+                        <h4>This is a video I made for my Secondary 1 Change Makers InnoFest</h4>
+                        <li><video width="320" height="240" controls>
+                              <source src="Innofest.mp4" type="video/mp4">
+                            </video>
+                        </li>
+                    </ul>
+                </details>
+            </li>
+            <h3>I know how to make Posters using Canva, Apple Pages, Keynote, Google Slides and PowerPoint </h3>
+            <li>
+                <details>
+                    <summary>Some Posters I have made</summary>
+                    <ul>
+                        <li>
+                            <h4>This is a poster my group and I made during our Social Studies Project in Primary 5</h4>
+                            <img src="KYNP.png" height="463.5" width="600">
+                        </li>
+                        <li>
+                            <h4>This is a poster I made during a Robotics Session in Primary School where we were tasked to show how LEGO is more than just a toy</h4>
+                            <img src="Lego-poster.png" height="480" width="600">
+                        </li>
+                        <li>
+                            <h4>This is a poster I made in Secondary 1 where we were tasked to make a poster on the 6 pillars of self-esteem</h4>
+                            <img src="self-esteem.png" height="600" width="424.2">
+                        </li>
+                        <li>
+                            <h4>These are posters my group and I made in Secondary 1 where we were tasked to make routine cards to remind dementia patients how to do certain tasks</h4>
+                            <img src="Routine-Card-Android.png" height="325.8" width="237.6">
+                            <img src="Routine-Card-iOS.png" height="325.8" width="237.6">
+                        </li>
+                        <li>
+                            <h4>This is a poster I made for my Sec 1 Change Makers Innofest</h4>
+                            <img src="Slicebert M1.png" height="600" width="424.2">
+                        </li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <p>Developed by Ekansh Mishra</p>
+        <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/ekansh-mishra1" target="_blank">
+                <img src="linkedin-logo.png" alt="LinkedIn Logo" height="30px" width="30px">
+            </a>
+        </div>
+    </footer>
+    <div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider" data-fillout-button-text="Feedback" data-fillout-slider-direction="right" data-fillout-inherit-parameters data-fillout-popup-size="medium"></div>
+    <script src="https://server.fillout.com/embed/v1/"></script>
+    <script src="transition.js"></script>
 </body>
 </html>
