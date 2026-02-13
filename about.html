@@ -5,47 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Ekansh's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="transition.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("fade-in");
+            const links = document.querySelectorAll("a[href]");
+            links.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    const target = link.getAttribute("href");
+                    if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
+                        e.preventDefault();
+                        document.body.classList.remove("fade-in");
+                        document.body.style.opacity = 0;
+                        setTimeout(() => { window.location.href = target; }, 300);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
+<body class="loaded">
 
-<body>
-
-<header>
+<header id="about">
     <h1>About Me</h1>
 </header>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="my_skills.html">My Skills</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="education.html">Education</a>
-    <a href="work.html">"Work" Experience</a>
-    <a href="leadership.html">Leadership</a>
-    <a href="hireme.html">Hire Me</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+  <a href="my_skills.html">My Skills</a>
+  <a href="achievements.html">Achievements</a>
+  <a href="certifications.html">Certifications</a>
+  <a href="education.html">Education</a>
+  <a href="work.html">"Work" Experience</a>
+  <a href="leadership.html">Leadership</a>
+  <a href="hireme.html">Hire Me</a>
+  <a href="ai_website_generator.html">AI Website Generator (Vibe Coding)</a>
 </nav>
 
 <section>
-    <a href="https://www.linkedin.com/in/ekansh-mishra1" target="_blank">
+    <a href="https://www.linkedin.com/in/ekansh-mishra1" target="_blank" class="profile-link">
         <img src="Photo_of_Ekansh_Mishra.jpg" alt="Ekansh Mishra Profile Picture" class="profile-pic">
     </a>
-
     <h2>About Me</h2>
-    <p>Hello! I am Ekansh Mishra, passionate about technology and innovation.</p>
+    <p>Hello! I am Ekansh Mishra, an enthusiastic and curious individual with a passion for technology, particularly in areas like web development and app design. I am always eager to learn new skills and apply them in practical, impactful ways.</p>
+    <p>I enjoy participating in various competitions and projects, always striving to improve and innovate. I believe in the power of collaboration and enjoy working with others to solve complex problems and create meaningful solutions. My journey in tech is driven by a desire to build and contribute, whether it's through coding, design, or leadership.</p>
+    <p>I am keen on exploring new frontiers in the digital world and participating in collaborative projects that push the boundaries of technology.</p>
 
-    <h3>Languages I Know</h3>
+    <p>I was honored to be recognized as a <b>Code Young Star</b>. You can check out my recognition video here:</p>
+    <iframe width="100%" height="500" src="https://www.youtube.com/embed/nwLRUG4_FfY" title="Codeyoung Stars- Ekansh Mishra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <h3>Languages I know</h3>
     <ul>
-        <li>English</li>
-        <li>Chinese</li>
-        <li>Odia</li>
+        <li>English (spoken and written)</li>
+        <li>Chinese (spoken and written/Proficiency: medium)</li>
+        <li>Odia (spoken)</li>
     </ul>
+
+    <h3>About.Me Website</h3>
+    <a href="https://about.me/ekansh-mishra" target="_blank">Ekansh Mishra's About.Me website</a>
 </section>
 
 <footer>
     <p>Developed by Ekansh Mishra</p>
     <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+    <div class="social-links">
+        <a href="https://linkedin.com/in/ekansh-mishra1" target="_blank">
+            <img src="linkedin-logo.png" alt="LinkedIn Logo" height="30px" width="30px">
+        </a>
+    </div>
 </footer>
 
-<script src="transition.js"></script>
+<div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider"
+ data-fillout-button-text="Feedback"
+ data-fillout-slider-direction="right"
+ data-fillout-inherit-parameters
+ data-fillout-popup-size="medium">
+</div>
+<script src="https://server.fillout.com/embed/v1/"></script>
+
 </body>
 </html>
