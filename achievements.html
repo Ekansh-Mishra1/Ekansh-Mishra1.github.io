@@ -5,40 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achievements - Ekansh's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("fade-in");
+            const links = document.querySelectorAll("a[href]");
+            links.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    const target = link.getAttribute("href");
+                    if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
+                        e.preventDefault();
+                        document.body.classList.remove("fade-in");
+                        document.body.style.opacity = 0;
+                        setTimeout(() => { window.location.href = target; }, 300);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
+<body class="loaded">
+    <header>
+        <h1>Achievements</h1>
+    </header>
 
-<body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="my_skills.html">My Skills</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="education.html">Education</a>
+      <a href="work.html">"Work" Experience</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="hireme.html">Hire Me</a>
+      <a href="ai_website_generator.html">AI Website Generator (Vibe Coding)</a>
+    </nav>
 
-<header>
-    <h1>Achievements</h1>
-</header>
+    <section>
+        <h2>Achievements</h2>
+        <ul>
+            <li>
+                <details>
+                    <summary>Sasmo: 2021-2025</summary>
+                    <ul>
+                        <li><img src="Sasmo.jpg" width="660" height="510"></li>
+                        <li><img src="Sasmo2.jpg" width="660" height="510"></li>
+                        <li>Sasmo Bronze 2024</li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>SMKC: 2021-2024</summary>
+                    <ul>
+                        <li><img src="Kangaroo.jpg" width="660" height="510"></li>
+                        <li><img src="Kangaroo2.jpg" width="660" height="510"></li>
+                        <li>SMKC Bronze 2024</li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>Storytelling Competitions</summary>
+                    <ul>
+                        <li><img src="Storytelling.jpg" width="660" height="510"></li>
+                        <li><img src="Storytelling2.jpg" width="660" height="510"></li>
+                        <li><img src="Storytelling3.jpg" width="660" height="510"></li>
+                        <li><img src="Storytelling4.jpg" width="660" height="510"></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>EICTS Scholarship</summary>
+                    <ul>
+                        <li><img src="EICTS.jpg" width="660" height="510"></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>SST Change Makers InnoFest</summary>
+                    <ul>
+                        <li><img src="Innofest-Awards.jpg" height="480" width="360"></li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+    </section>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="my_skills.html">My Skills</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="education.html">Education</a>
-    <a href="work.html">"Work" Experience</a>
-    <a href="leadership.html">Leadership</a>
-    <a href="hireme.html">Hire Me</a>
-</nav>
+    <footer>
+        <p>Developed by Ekansh Mishra</p>
+        <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/ekansh-mishra1" target="_blank" aria-label="LinkedIn Profile">
+                <img src="linkedin-logo.png" alt="LinkedIn Logo" height="30" width="30">
+            </a>
+        </div>
+    </footer>
 
-<section>
-    <h2>Major Achievements</h2>
-    <ul>
-        <li>SASMO Awards</li>
-        <li>International Applied Mathematical Olympiad - Bronze</li>
-        <li>SST Change Makers InnoFest Winner</li>
-    </ul>
-</section>
-
-<footer>
-    <p>Developed by Ekansh Mishra</p>
-    <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
-</footer>
-
-<script src="transition.js"></script>
+    <div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider"
+         data-fillout-button-text="Feedback"
+         data-fillout-slider-direction="right"
+         data-fillout-inherit-parameters
+         data-fillout-popup-size="medium">
+    </div>
+    <script src="https://server.fillout.com/embed/v1/"></script>
+    <script src="transition.js"></script>
 </body>
 </html>
