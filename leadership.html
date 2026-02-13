@@ -1,59 +1,171 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+
+    <meta charset="UTF-9">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership - Ekansh</title>
+
+    <title>Leadership - Ekansh's Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+      body {
+
+        opacity: 0;
+
+        transition: opacity 0.5s ease-in-out;
+
+      }
+
+      body.fade-in {
+
+        opacity: 1;
+
+      }
+
+    </style>
+
+    <script>
+
+      document.addEventListener("DOMContentLoaded", () => {
+
+        document.body.classList.add("fade-in");
+
+    
+
+        const links = document.querySelectorAll("a[href]");
+
+        links.forEach(link => {
+
+          link.addEventListener("click", function (e) {
+
+            const target = link.getAttribute("href");
+
+            if (target && !target.startsWith("#") && !link.target) {
+
+              e.preventDefault();
+
+              document.body.classList.remove("fade-in");
+
+              document.body.style.opacity = 0;
+
+              setTimeout(() => {
+
+                window.location.href = target;
+
+              }, 300); // Adjust to match transition
+
+            }
+
+          });
+
+        });
+
+      });
+
+    </script>
+
+
+
 </head>
-<body>
+
+<body class="loaded">
+
+
+
     <header>
+
         <h1>Leadership</h1>
+
     </header>
 
+
+
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="my_skills.html">Skills</a>
-        <a href="achievements.html">Achievements</a>
-        <a href="certifications.html">Certifications</a>
-        <a href="education.html">Education</a>
-        <a href="work.html">Experience</a>
-        <a href="leadership.html">Leadership</a>
-        <a href="hireme.html">Hire Me</a>
-    </nav>
+
+      <a href="index.html">Home</a>
+
+      <a href="about.html">About Me</a>
+
+      <a href="my_skills.html">My Skills</a>
+
+      <a href="achievements.html">Achievements</a>
+
+      <a href="certifications.html">Certifications</a>
+
+      <a href="education.html">Education</a>
+
+      <a href="work.html">"Work" Experience</a>
+
+      <a href="leadership.html">Leadership</a>
+
+      <a href="hireme.html">Hire Me</a>
+
+  </nav>
+
+ 
 
     <section>
-        <div class="exp-card">
-            <h3>Class Chairperson</h3>
-            <p><strong>School of Science and Technology (SST)</strong> | 2025</p>
-            <p>Leading class discussions, fostering bonds, and representing the student voice.</p>
-        </div>
 
-        <div class="exp-card">
-            <h3>Cyber Champ</h3>
-            <p><strong>Beacon Primary School</strong> | 2021 - 2025</p>
-            <p>Advocating for Cyber Wellness and Security among peers.</p>
-        </div>
+        <h2>Leadership</h2>
 
-        <div class="exp-card">
-            <h3>Peer Support Leader</h3>
-            <p><strong>Beacon Primary School</strong> | 2022 - 2025</p>
-            <p>Focused on student wellness and peer engagement activities.</p>
-        </div>
+        <ul>
+
+            <li><strong>Cyber Champ in Beacon Primary School</strong> - Cyber wellness and cyber security. From 2021 - 2025</li>
+
+            <li><strong>Peer Support Leader in Beacon Primary School</strong> - Peer wellness and Peer engagement. From 2022 - 2025</li>
+
+            <li><strong>Chairperson of my Class at SST(Secondary 1)</strong> - Leading and representing my class, fostering class bonds and leading class discussions. From Jan 2025 - November 2025</li>
+
+        </ul>
+
     </section>
 
-    <script src="transition.js"></script>
+
+
     <footer>
-        <p>Developed by Ekansh Mishra &copy; 2025</p>
+
+        <p>Developed by Ekansh Mishra</p>
+
+        <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+
         <div class="social-links">
-            <a href="https://linkedin.com/in/ekansh-mishra1" target="_blank">
-                <img src="linkedin-logo.png" alt="LinkedIn" height="30px" width="30px">
+
+            <a href="https://linkedin.com/in/ekansh-mishra1" target="_blank" aria-label="LinkedIn Profile">
+
+                <img src="linkedin-logo.png" alt="LinkedIn Logo" height="30px" width="30px">
+
             </a>
+
         </div>
+
     </footer>
 
-    <div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider" data-fillout-button-text="Feedback" data-fillout-slider-direction="right" data-fillout-inherit-parameters data-fillout-popup-size="medium"></div>
-    <script src="https://server.fillout.com/embed/v1/"></script>
+
+
+    <div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider"
+
+     data-fillout-button-text="Feedback"
+
+     data-fillout-slider-direction="right"
+
+     data-fillout-inherit-parameters
+
+     data-fillout-popup-size="medium">
+
+</div>
+
+<script src="https://server.fillout.com/embed/v1/"></script>
+
+    
+
+    <script src="transition.js"></script>
+
 </body>
+
 </html>
