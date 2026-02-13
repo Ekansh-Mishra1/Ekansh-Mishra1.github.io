@@ -2,47 +2,147 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Certifications - Ekansh Mishra</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications - Ekansh's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        details {
+            margin-bottom: 15px;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 5px 0;
+        }
+        details ul {
+            list-style: disc;
+            padding-left: 30px;
+        }
+        details li {
+            margin-bottom: 8px;
+        }
+        details li a {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+        details li a:hover {
+            color: var(--primary-color);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("fade-in");
+            const links = document.querySelectorAll("a[href]");
+            links.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    const target = link.getAttribute("href");
+                    if (target && !target.startsWith("#") && !link.target && !target.endsWith(".pdf")) {
+                        e.preventDefault();
+                        document.body.classList.remove("fade-in");
+                        document.body.style.opacity = 0;
+                        setTimeout(() => {
+                            window.location.href = target;
+                        }, 300);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
-
 <body class="loaded">
+    <header>
+        <h1>Certifications</h1>
+    </header>
 
-<header>
-    <h1>Ekansh's Portfolio</h1>
-    <h4>Web Developer | Innovator | Designer | Creator</h4>
-</header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="my_skills.html">My Skills</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="education.html">Education</a>
+      <a href="work.html">"Work" Experience</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="hireme.html">Hire Me</a>
+      <a href="ai_website_generator.html">AI Website Generator (Vibe Coding)</a>
+    </nav>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="my_skills.html">My Skills</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="education.html">Education</a>
-    <a href="work.html">Work Experience</a>
-    <a href="leadership.html">Leadership</a>
-    <a href="hireme.html">Hire Me</a>
-</nav>
-
-<main>
     <section>
-        <h2>My Certifications</h2>
+        <h2>Certifications</h2>
         <ul>
-            <li>Web Development Certification</li>
-            <li>Python Programming Certification</li>
-            <li>AI & Machine Learning Fundamentals</li>
-            <li>App Development Workshop Completion</li>
+            <li>
+                <details>
+                    <summary>Certified in <b>HTML, CSS and JavaScript</b> (Code Young)</summary>
+                    <ul>
+                        <li><img src="WebDev1.png" width="660" height="510" alt="WebDev1 Certificate"></li>
+                        <li><img src="WebDev2.png" width="660" height="510" alt="WebDev2 Certificate"></li>
+                        <li><img src="WebDev3.png" width="660" height="510" alt="WebDev3 Certificate"></li>
+                    </ul>
+                </details>
+            </li>
+            <li>Certified in <b>Python Programming</b> (Code Vidhya)</li>
+            <li>
+                <details>
+                    <summary><b>Junior Lex!s Debate Masterclass</b> (ACJC)</summary>
+                    <ul>
+                        <li><img src="debate.jpg" width="222" height="320" alt="Debate Certificate"></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>Google Applied Digital Skills (Google)</summary>
+                    <ul>
+                        <li><img src="1.png" width="660" height="510" alt="Google ADS 1"></li>
+                        <li><img src="2.png" width="660" height="510" alt="Google ADS 2"></li>
+                        <li><img src="3.png" width="660" height="510" alt="Google ADS 3"></li>
+                        <li><img src="4.png" width="660" height="510" alt="Google ADS 4"></li>
+                        <li><img src="5.png" width="660" height="510" alt="Google ADS 5"></li>
+                        <li><img src="6.png" width="660" height="510" alt="Google ADS 6"></li>
+                        <li><img src="7.png" width="660" height="510" alt="Google ADS 7"></li>
+                        <li><img src="8.png" width="660" height="510" alt="Google ADS 8"></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>Apple Teacher (Apple)</summary>
+                    <ul>
+                        <li>Mac Skills</li>
+                        <li>Swift Playgrounds</li>
+                        <li>Pages</li>
+                        <li>Keynote</li>
+                        <li>Numbers</li>
+                        <li>GarageBand</li>
+                        <li>iMovie</li>
+                        <li>Swift Coding</li>
+                        <li>Swift Playgrounds App</li>
+                        <li>Coding in the Classroom</li>
+                        <li><img src="ATC.png" width="660" height="510" alt="Apple Teacher Certificate 1"></li>
+                        <li><img src="ATC2.png" width="660" height="510" alt="Apple Teacher Certificate 2"></li>
+                    </ul>
+                </details>
+            </li>
         </ul>
     </section>
-</main>
 
-<footer>
-    <p>Developed by Ekansh Mishra</p>
-    <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
-</footer>
+    <footer>
+        <p>Developed by Ekansh Mishra</p>
+        <p>&copy; 2025 Ekansh Mishra. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/ekansh-mishra1" target="_blank" aria-label="LinkedIn Profile">
+                <img src="linkedin-logo.png" alt="LinkedIn Logo" height="30px" width="30px">
+            </a>
+        </div>
+    </footer>
 
-<script src="transition.js"></script>
+    <div data-fillout-id="oxdu7eEyxLus" data-fillout-embed-type="slider"
+     data-fillout-button-text="Feedback"
+     data-fillout-slider-direction="right"
+     data-fillout-inherit-parameters
+     data-fillout-popup-size="medium">
+    </div>
+    <script src="https://server.fillout.com/embed/v1/"></script>
+    <script src="transition.js"></script>
 </body>
 </html>
