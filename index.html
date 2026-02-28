@@ -117,33 +117,48 @@ header h4 {
 <main>
     <style>
         .hello-container {
-            font-family: Arial, sans-serif;
-            font-size: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding: 40px 0;
+  font-family: Arial, sans-serif;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.static-text {
+  margin-right: 15px;
 }
 
 .rotating-text {
-  height: 3rem; /* Same as font size */
-  line-height: 3rem;
-  overflow: hidden; /* Hides other words */
+  height: 3rem;
+  overflow: hidden;
+  position: relative;
 }
 
 .rotating-text span {
   display: block;
-  animation: spin 5s infinite; /* 5s total loop */
+  line-height: 3rem;
+  animation: spin 15s linear infinite;
   color: #0071e3;
 }
 
+/* 15 languages → move 100% per word */
 @keyframes spin {
-  0% { transform: translateY(0); }
-  20% { transform: translateY(-100%); }
-  40% { transform: translateY(-200%); }
-  60% { transform: translateY(-300%); }
-  80% { transform: translateY(-400%); }
+  0%   { transform: translateY(0); }
+  6.66% { transform: translateY(-100%); }
+  13.33% { transform: translateY(-200%); }
+  20% { transform: translateY(-300%); }
+  26.66% { transform: translateY(-400%); }
+  33.33% { transform: translateY(-500%); }
+  40% { transform: translateY(-600%); }
+  46.66% { transform: translateY(-700%); }
+  53.33% { transform: translateY(-800%); }
+  60% { transform: translateY(-900%); }
+  66.66% { transform: translateY(-1000%); }
+  73.33% { transform: translateY(-1100%); }
+  80% { transform: translateY(-1200%); }
+  86.66% { transform: translateY(-1300%); }
+  93.33% { transform: translateY(-1400%); }
   100% { transform: translateY(0); }
 }
 
@@ -151,15 +166,25 @@ header h4 {
     <h1>Under Development</h1>
     <section class="hero-section">
         <div class="hello-container">
-          <span class="static-text">Hello - </span>
-          <div class="rotating-text">
-            <span>Bonjour</span>
-            <span>¡Hola!</span>
-            <span>Hallo</span>
-            <span>Ciao</span>
-            <span>Namaste</span>
-          </div>
-        </div>
+  <span class="static-text">Hello — </span>
+  <div class="rotating-text">
+    <span>Hello</span>
+    <span>Bonjour</span>
+    <span>Hola</span>
+    <span>Hallo</span>
+    <span>Ciao</span>
+    <span>Namaste</span>
+    <span>こんにちは</span>
+    <span>안녕하세요</span>
+    <span>你好</span>
+    <span>Olá</span>
+    <span>Привет</span>
+    <span>مرحبا</span>
+    <span>Selamat</span>
+    <span>Sawubona</span>
+    <span>Habari</span>
+  </div>
+</div>
         <h2>I'm Ekansh Mishra</h2>
         <p class="intro-text">Hi, I’m Ekansh Mishra — a passionate and curious tech enthusiast with a love for web development, app design, and creative problem-solving. I thrive on learning new skills, tackling challenges, and turning ideas into impactful solutions. Whether through coding, design, or leadership, I aim to collaborate, innovate, and push the boundaries of technology.</p>
         <a href="about.html" class="button">Learn More About Me <i class="fas fa-arrow-right"></i></a>
