@@ -76,6 +76,9 @@ body.loaded {
 
 }
 
+body.fade-out {
+    opacity: 0;
+}
 
 
 header {
