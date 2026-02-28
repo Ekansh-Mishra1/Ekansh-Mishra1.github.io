@@ -138,30 +138,62 @@ header h4 {
 .rotating-text span {
   display: block;
   line-height: 3rem;
-  animation: spin 15s linear infinite;
-  color: White;
+  animation: spin 30s linear infinite; /* Slower overall */
+  color: #0071e3;
 }
 
-/* 15 languages → move 100% per word */
 @keyframes spin {
+  /* Word 1 */
   0%   { transform: translateY(0); }
-  6.66% { transform: translateY(-100%); }
-  13.33% { transform: translateY(-200%); }
-  20% { transform: translateY(-300%); }
-  26.66% { transform: translateY(-400%); }
-  33.33% { transform: translateY(-500%); }
-  40% { transform: translateY(-600%); }
-  46.66% { transform: translateY(-700%); }
-  53.33% { transform: translateY(-800%); }
-  60% { transform: translateY(-900%); }
-  66.66% { transform: translateY(-1000%); }
-  73.33% { transform: translateY(-1100%); }
-  80% { transform: translateY(-1200%); }
-  86.66% { transform: translateY(-1300%); }
-  93.33% { transform: translateY(-1400%); }
+  5%   { transform: translateY(0); }
+  8%   { transform: translateY(-100%); }
+
+  /* Word 2 */
+  13%  { transform: translateY(-100%); }
+  16%  { transform: translateY(-200%); }
+
+  /* Word 3 */
+  21%  { transform: translateY(-200%); }
+  24%  { transform: translateY(-300%); }
+
+  /* Word 4 */
+  29%  { transform: translateY(-300%); }
+  32%  { transform: translateY(-400%); }
+
+  /* Word 5 */
+  37%  { transform: translateY(-400%); }
+  40%  { transform: translateY(-500%); }
+
+  /* Word 6 */
+  45%  { transform: translateY(-500%); }
+  48%  { transform: translateY(-600%); }
+
+  /* Word 7 */
+  53%  { transform: translateY(-600%); }
+  56%  { transform: translateY(-700%); }
+
+  /* Word 8 */
+  61%  { transform: translateY(-700%); }
+  64%  { transform: translateY(-800%); }
+
+  /* Word 9 */
+  69%  { transform: translateY(-800%); }
+  72%  { transform: translateY(-900%); }
+
+  /* Word 10 */
+  77%  { transform: translateY(-900%); }
+  80%  { transform: translateY(-1000%); }
+
+  /* Word 11 */
+  85%  { transform: translateY(-1000%); }
+  88%  { transform: translateY(-1100%); }
+
+  /* Word 12 */
+  93%  { transform: translateY(-1100%); }
+  96%  { transform: translateY(-1200%); }
+
   100% { transform: translateY(0); }
 }
-
     </style>
     <section class="hero-section">
         <div class="hello-container">
