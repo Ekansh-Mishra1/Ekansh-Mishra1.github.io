@@ -8,7 +8,7 @@
 
     --secondary-color: #4a5568;
 
-    --accent-color: #3b82f6;
+    --accent-color: #60a5fa;
 
     --bg-color: #f7fafc;
 
@@ -390,7 +390,7 @@ section {
 
 section h2 {
 
-    color: var(white);
+    color: var(--light-text-color);
 
     font-size: 2.2rem;
 
@@ -434,7 +434,7 @@ section h2::after {
 
 section h3 {
 
-    color: var(white);
+    color: var(--light-text-color);
 
     font-size: 1.5rem;
 
@@ -446,7 +446,9 @@ section h3 {
 
 }
 
-
+section p {
+    color: var(--light-text-color);
+}
 
 ul {
 
@@ -462,7 +464,9 @@ ul {
 
 ul li {
 
-    background-color: var(--bg-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-text-color);
+    border-left: 5px solid var(--card-bg);
 
     border-left: 5px solid var(--accent-color);
 
@@ -492,7 +496,8 @@ ul li:hover {
 
 ul li strong {
 
-    color: var(--primary-color);
+    color: var(--light-text-color);
+}
 
     font-weight: 600;
 
@@ -502,7 +507,7 @@ ul li strong {
 
 section a {
 
-    color: var(--accent-color);
+     color: var(--card-bg);
 
     text-decoration: none;
 
@@ -516,7 +521,7 @@ section a {
 
 section a:hover {
 
-    color: var(--primary-color);
+    color: #cbd5e0;
 
     text-decoration: underline;
 
