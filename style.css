@@ -373,17 +373,14 @@ main, section {
 
 
 section {
-
-    background-color: var(--card-bg);
-
-    padding: 30px;
-
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--accent-color), #2c5282);
+    color: var(--light-text-color);
     border-radius: var(--radius);
-
-    box-shadow: var(--shadow-md);
-
-    margin-bottom: 25px;
-
+    box-shadow: var(--shadow-lg);
+    margin: 30px auto;
+    max-width: 1000px;
 }
 
 
